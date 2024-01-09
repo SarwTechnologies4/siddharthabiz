@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <!--=============== basic  ===============-->
+    <!-- <meta charset="UTF-8">
+    <title>Gundri Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/> -->
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+
+
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--=============== css  ===============-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/color.css">
+    <!--=============== favicons ===============-->
+    <!--  <link rel="shortcut icon" href="images/favicon.ico"> -->
+</head>
+<body class="home">
+<!--loader-->
+<div class="loader-wrap">
+    <div class="pin">
+        <div class="pulse"></div>
+    </div>
+</div>
+<!--loader end-->
+<!-- Main  -->
+<div id="main">
+    <!-- header-->
+    <header class="main-header">
+        <!-- header-top-->
+        <div class="header-top fl-wrap">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="logo-holder">
+                        <jcms:module:logo/>
+                    </div>
+                    <div class="greeting">
+                        <a href="<jcms:site:base_url/>listproperty" class="btn btn-outline-light btn-sm d-inline-block">List your property</a>
+                        <jcms:module:subscribers:login-welcome/>
+                    </div>
+                </div>
+                <div class="nav-holder main-menu">
+                    <nav>
+                        <jcms:module:menu/>
+                    </nav>
+                </div>
+               
+            </div>
+        </div>
+        <!-- header-top end-->
+    </header>
+    <!--  header end -->
+    <!--  wrapper  -->
+    <div id="wrapper">
+        <!-- content-->
+        <div class="content">
+            <!--section -->
+            <section class="hero-section" data-scrollax-parent="true" id="sec1">
+                <jcms:module:slideshow/>
+               
+                <div class="hero-section-wrap fl-wrap">
+                    <div class="container">
+                        <div class="home-intro">
+
+                            <h2>Let's start exploring Nepal</h2>
+                            <h3>Book rooms with confidence</h3>
+                        </div>
+                        <div class="main-search-input-wrap" id="hotelsearch-form">
+                            <div class="main-search-input fl-wrap">
+                                <form id="hotelsearchform" action="" method="post" autocomplete="off">
+                                    <input type="hidden" name="hotelid">
+                                    <div class="main-search-input-item location" id="autocomplete-container">
+                                        <span class="inpt_dec"><i class="fal fa-map-marker"></i></span>
+                                        <input type="text" placeholder="Hotel , City..." id="searchkey" name="searchkey" autocomplete="off"/>
+                                        <a href="#"><i class="fal fa-dot-circle"></i></a>
+                                    </div>
+                                    <!--<div class="main-search-input-item main-date-parent main-search-input-item_small">
+                                        <span class="inpt_dec"><i class="fal fa-calendar-check"></i></span>
+                                        <input type="text" placeholder="When" name="main-input-search" value="" id="checkin"/>
+                                    </div>-->
+                                    <div class="main-search-input-date-item main-search-input-item_small">
+                                        <span class="inpt_dec"><i class="fal fa-calendar-check"></i></span>
+                                        <input type="text" placeholder="Check In" name="checkin" id="checkin" readonly/>
+                                    </div>
+                                    <div class="main-search-input-date-item main-search-input-item_small">
+                                        <span class="inpt_dec"><i class="fal fa-calendar-check"></i></span>
+                                        <input type="text" placeholder="Check Out" name="checkout" id="checkout" readonly/>
+                                    </div>
+                                    <div class="main-search-input-item">
+                                        <div class="qty-dropdown fl-wrap">
+                                            <div class="qty-dropdown-header fl-wrap"><i class="fal fa-users"></i> Persons</div>
+                                            <div class="qty-dropdown-content fl-wrap">
+                                                <div class="quantity-item">
+                                                    <label><i class="fas fa-male"></i> Adults</label>
+                                                    <div class="quantity">
+                                                        <input type="number" name="adults" min="1" max="5" step="1" value="1">
+                                                    </div>
+                                                </div>
+                                                <div class="quantity-item">
+                                                    <label><i class="fas fa-child"></i> Children</label>
+                                                    <div class="quantity">
+                                                        <input type="number" name="child" min="0" max="3" step="1" value="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="main-search-button color2-bg" id="btn-search" type="submit">Search <i class="fal fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- section end -->
+            <!--section -->
+            <jcms:module:destination/>
+            <!-- section end -->
+            <!-- section-->
+            <jcms:module:homerecenthotel/><!-- hotelapi -->
+            <!-- section end -->
+            <!--section -->
+            <jcms:module:recommendedHotel/><!-- hotelapi-->
+
+            <!-- section end -->
+            <!--section -->
+            <jcms:module:whychooseus/><!-- hotelapi.module-->
+            <!-- section end -->
+
+            <!--section -->
+            <jcms:module:appcomingsoon/><!--testimonal -->
+            <jcms:module:testimonialHome/>
+
+            <!-- section end -->
+            <!--section -->
+            <!-- <section>
+                <div class="container">
+                    <div class="section-title">
+                        <div class="section-title-separator"><span></span></div>
+                        <h2>Testimonials</h2>
+                        <span class="section-separator"></span>
+                        <p>We are happy that our users are happy. Few happiness as shared by our valued users.</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div> -->
+            <!--slider-carousel-wrap -->
+            <!--  <div class="slider-carousel-wrap text-carousel-wrap fl-wrap">
+                 <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                 <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                 <div class="text-carousel single-carousel fl-wrap">-->
+            <!--slick-item -->
+            <!--<div class="slick-item">
+                <div class="text-carousel-item">
+                    <div class="popup-avatar"><img src="images/avatar/2.jpg" alt=""></div>
+                    <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                    <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                    <p> "I booked through them for my daughter last bday a 4day trip. We were able to experience our life time memory with gundri.com. Hotel welcomed us like king when we arrived and the stay was awesome experience. The call from gundri.com representative made us feel special during our stay."</p>
+                    <a href="#" class="testim-link">Via Instagram</a>
+                </div>
+            </div> -->
+            <!--slick-item end -->
+            <!--slick-item -->
+            <!-- <div class="slick-item">
+                <div class="text-carousel-item">
+                    <div class="popup-avatar"><img src="images/avatar/3.jpg" alt=""></div>
+                    <div class="listing-rating card-popup-rainingvis" data-starrating2="4"> </div>
+                    <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                    <p> I booked through them for my daughter last bday a 4day trip. We were able to experience our life time memory with gundri.com. Hotel welcomed us like king when we arrived and the stay was awesome experience. The call from gundri.com representative made us feel special during our stay."</p>
+                    <a href="#" class="testim-link">Via Google</a>
+                </div>
+            </div> -->
+            <!--slick-item end -->
+            <!--slick-item -->
+            <!-- <div class="slick-item">
+                <div class="text-carousel-item">
+                    <div class="popup-avatar"><img src="images/avatar/1.jpg" alt=""></div>
+                    <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                    <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                    <p> "I booked through them for my daughter last bday a 4day trip. We were able to experience our life time memory with gundri.com. Hotel welcomed us like king when we arrived and the stay was awesome experience. The call from gundri.com representative made us feel special during our stay."</p>
+                    <a href="#" class="testim-link">Via Facebook</a>
+                </div>
+            </div> -->
+            <!--slick-item end -->
+            <!--slick-item -->
+            <!-- <div class="slick-item">
+                <div class="text-carousel-item">
+                    <div class="popup-avatar"><img src="images/avatar/3.jpg" alt=""></div>
+                    <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                    <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                    <p> "I booked through them for my daughter last bday a 4day trip. We were able to experience our life time memory with gundri.com. Hotel welcomed us like king when we arrived and the stay was awesome experience. The call from gundri.com representative made us feel special during our stay."</p>
+                    <a href="#" class="testim-link">Via Google</a>
+                </div>
+            </div> -->
+            <!--slick-item end -->
+            <!-- </div>
+        </div> -->
+            <!--slider-carousel-wrap end-->
+            <!--  </section> -->
+            <!-- section end-->
+
+            <jcms:module:ownerofhotel/><!-- testimonal -->
+            <!-- section end -->
+            <!--section -->
+            <jcms:module:newsHome/>
+        </div>
+        <!-- content end-->
+    </div>
+    <!--wrapper end -->
+    <!--footer -->
+    <footer class="main-footer">
+        <!--footer-inner-->
+        <div class="footer-inner">
+            <div class="container">
+                <!--footer-fw-widget-->
+
+                <!--footer-fw-widget end-->
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <!-- <p> Whoever you are, whatever you're looking for, we have the perfect place for you. Our 8,424 listings include 6,535 listings of homes, apartments, and other unique places to stay, and are located in 3,889 destinations. Gundri Booking is based in Nepal, is supported internationally  in 14 countries.</p> -->
+                        <p>
+                            <jcms:module:footerBrief/>
+                        </p>
+                        <br><br><br>
+                    </div>
+                    <!--footer-widget -->
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+
+                            <div class="footer-contacts-widget fl-wrap">
+                                <jcms:module:footer-contactinfo/>
+                                <!--   <ul  class="footer-contacts fl-wrap">
+                                      <li><span><i class="fal fa-envelope"></i> Mail :</span><a href="#" target="_blank">info@gundri.com</a></li>
+                                      <li> <span><i class="fal fa-map-marker-alt"></i> Adress :</span><a href="#" target="_blank">Hattisaar, kathmandu, Nepal</a></li>
+                                      <li><span><i class="fal fa-phone"></i> Phone :</span><a href="#">+977 9801055718</a></li>
+                                  </ul> -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--footer-widget end-->
+                    <!--footer-widget -->
+                    <!-- <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+                            <div class="footer-social">
+                                <span>Find us : </span> -->
+                    <jcms:module:socialbottom/>
+                    <!--  <ul>
+                         <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                         <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                         <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                         <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                     </ul> -->
+                    <!-- </div>
+                    <a class="contact-btn color-bg" href="#">Get In Touch<i class="fal fa-envelope"></i></a>
+                </div>
+            </div> -->
+                    <!--footer-widget end-->
+                    <!--footer-widget -->
+                    <div class="col-md-4">
+                        <!--   <div class="customer-support-widget fl-wrap">
+                              <h4>Customer support : </h4>
+                              <a href="tel:+9779801055718" class="cs-mumber">+977 9801055718</a>
+                              <a href="tel:+9779801055718" class="cs-mumber-button color2-bg">Call Now <i class="far fa-phone-volume"></i></a>
+                          </div> -->
+                        <jcms:module:customersupport/>
+
+                    </div>
+                    <!--footer-widget end-->
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+        <!--footer-inner end -->
+        <div class="footer-bg">
+        </div>
+        <!--sub-footer-->
+        <div class="sub-footer">
+            <div class="container">
+                <!--   <div class="copyright"> &#169; Gundri Booking 2021 .  All rights reserved.</div> -->
+                <div class="copyright">
+                    <jcms:site:copyright/>
+                </div>
+
+                <div class="subfooter-nav">
+                    <jcms:module:footer-menu/>
+                    <!-- <ul>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+        <!--sub-footer end -->
+    </footer>
+    <!--footer end -->
+    <!--map-modal -->
+    <!--<div class="map-modal-wrap">
+        <div class="map-modal-wrap-overlay"></div>
+        <div class="map-modal-item">
+            <div class="map-modal-container fl-wrap">
+                <div class="map-modal fl-wrap">
+                    <div id="singleMap" data-latitude="40.7" data-longitude="-73.1"></div>
+                </div>
+                <h3><i class="fal fa-location-arrow"></i><a href="#">Hotel Title</a></h3>
+                <input id="pac-input" class="controls fl-wrap controls-mapwn" type="text" placeholder="What Nearby ?   Bar , Gym , Restaurant ">
+                <div class="map-modal-close"><i class="fal fa-times"></i></div>
+            </div>
+        </div>
+    </div>-->
+    <!--map-modal end -->
+    <!--register form -->
+    <!--<div class="main-register-wrap modal">
+        <div class="reg-overlay"></div>
+        <div class="main-register-holder">
+            <div class="main-register fl-wrap">
+                <div class="close-reg color-bg"><i class="fal fa-times"></i></div>
+                <ul class="tabs-menu">
+                    <li class="current"><a href="#tab-1"><i class="fal fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="#tab-2"><i class="fal fa-user-plus"></i> Register</a></li>
+                </ul>
+                <div id="tabs-container">
+                    <div class="tab">
+                        <div id="tab-1" class="tab-content">
+                            <h3>Sign In <span>Easy<strong>Book</strong></span></h3>
+                            <div class="custom-form">
+                                <form method="post"  name="registerform">
+                                    <label>Username or Email Address <span>*</span> </label>
+                                    <input name="email" type="text"   onClick="this.select()" value="">
+                                    <label >Password <span>*</span> </label>
+                                    <input name="password" type="password"   onClick="this.select()" value="" >
+                                    <button type="submit"  class="log-submit-btn color-bg"><span>Log In</span></button>
+                                    <div class="clearfix"></div>
+                                    <div class="filter-tags">
+                                        <input id="check-a" type="checkbox" name="check">
+                                        <label for="check-a">Remember me</label>
+                                    </div>
+                                </form>
+                                <div class="lost_password">
+                                    <a href="#">Lost Your Password?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <div id="tab-2" class="tab-content">
+                                <h3>Sign Up <span>Easy<strong>Book</strong></span></h3>
+                                <div class="custom-form">
+                                    <form method="post"   name="registerform" class="main-register-form" id="main-register-form2">
+                                        <label >Full Name <span>*</span> </label>
+                                        <input name="name" type="text"   onClick="this.select()" value="">
+                                        <label>Email Address <span>*</span></label>
+                                        <input name="email" type="text"  onClick="this.select()" value="">
+                                        <label >Password <span>*</span></label>
+                                        <input name="password" type="password"   onClick="this.select()" value="" >
+                                        <button type="submit"     class="log-submit-btn color-bg"  ><span>Register</span></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="log-separator fl-wrap"><span>or</span></div>
+                    <div class="soc-log fl-wrap">
+                        <p>For faster login or register use your social account.</p>
+                        <a href="#" class="facebook-log"><i class="fab fa-facebook-f"></i>Connect with Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!--register form end -->
+    <a class="to-top"><i class="fas fa-caret-up"></i></a>
+</div>
+<!-- Main end -->
+
+<!--register form -->
+<jcms:module:subscribers:login-register-form/>
+<!--register form end -->
+
+<!--=============== scripts  ===============-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script>
+<script type="text/javascript" src="js/map-single.js"></script>-->
+
+<script>
+    var base_url = jQuery('base').attr('url');
+    if ($('#hotelsearchform')[0]) {
+
+        $("#searchkey").autocomplete({
+            source: base_url + "hotelcomplete.php",
+            // minLength: 2,
+            showHintOnFocus: true,
+            select: function (event, ui) {
+                $('input[name="hotelid"]').val(ui.item.id);
+            }
+        });
+
+        $('#checkin').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'yy-mm-dd',
+            minDate: '0',
+            maxDate: '+2Y',
+            onSelect: function (dateStr) {
+                var d1 = $(this).datepicker("getDate");
+                d1.setDate(d1.getDate() + 1); // change to + 1 if necessary
+                var d2 = $(this).datepicker("getDate");
+                d2.setDate(d2.getDate() + 180); // change to + 180 if necessary
+                $("#checkout").datepicker("option", "minDate", d1);
+                $("#checkout").datepicker("option", "maxDate", d2);
+                var start = $("#checkin").datepicker("getDate");
+                var end = $("#checkout").datepicker("getDate");
+                var days = (end - start) / 1000 / 60 / 60 / 24;
+                if (end != null)
+                    var dd = $(this).datepicker("getDate");
+                $('#checkout').datepicker('setDate', d1);
+            }
+        });
+
+        $('#checkout').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'yy-mm-dd',
+            minDate: $("#checkin").datepicker("getDate"),
+            maxDate: '+2Y'
+        });
+
+        $("#hotelsearchform").validate({
+            errorElement: 'span',
+            errorClass: 'validate-has-error',
+            rules: {
+                searchkey: {required: true,},
+                hotelid: {required: true}
+            },
+            messages: {
+                searchkey: {required: "Please enter a destination to start searching.",},
+                hotelid: {required: ''}
+            },
+            submitHandler: function (form) {
+                var Frmval = $("#hotelsearchform").serialize();
+                $("#btn-search").attr("disabled", "true").html('Loading...');
+                $.ajax({
+                    type: "POST",
+                    dataType: "JSON",
+                    url: base_url + "hotelcomplete.php",
+                    data: "action=getlink&" + Frmval,
+                    success: function (data) {
+                        var msg = eval(data);
+                        window.location.href = base_url + "search/" + data.url;
+                    }
+                });
+                return false;
+            }
+        });
+
+    }
+</script>
+</body>
+</html>

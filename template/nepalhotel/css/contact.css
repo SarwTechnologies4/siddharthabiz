@@ -1,0 +1,71 @@
+.contact-info{
+    margin-bottom: 50px;
+    background: #fff;
+    padding: 70px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+}
+.contact-info1{
+    padding: 40px 70px;
+}
+
+.contact-form ::placeholder{
+    color: #000;
+}
+
+.contact-form input, .contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 44px;
+}
+.contact-form #submit.btn-orange {
+    background: #065aa9;
+    color: #fff;
+    width: 100%;
+}
+.info-icon {
+    position: absolute;
+    color: #000;
+    font-size: 48px;
+    left: 10%;
+    top: 28%;
+}
+
+.info-icon h5{
+    text-transform: capitalize;
+}
+.package-contact2 h4{
+        font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.package-contact2 h4 span, .package-contact2 h4 span a{
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+.package-contact2{
+    margin-top: 25px;
+}
+
+.hall-enquiry45 .contact-form input, .hall-enquiry45 .contact-form textarea{
+    margin-bottom: 5px;
+} 
+
+.hall-enquiry45 .contact-form .form-group{
+    margin-bottom:30px ;
+}
+
+.hall-enquiry45 .contact-form .form-group span, .hall-enquiry45 .contact-form .textarea span {
+    color: #065aa9;
+    font-size: 13px;
+}
+
+.validate-has-error{
+    color:red;
+    font-size:14px;
+}

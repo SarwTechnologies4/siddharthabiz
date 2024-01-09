@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+<head>
+    
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!--Default CSS-->
+    <link rel="stylesheet" href="css/default.css" type="text/css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!--Plugin CSS-->
+    <link rel="stylesheet" href="css/plugin.css" type="text/css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+</head>
+
+<body>
+    <jcms:module:header/>
+        
+    <!-- breadcrumbs starts -->
+    <jcms:module:contactbreadcum/>
+    <!-- breadcrumbs Ends -->
+
+    <!-- contact starts -->
+    <jcms:module:contactus/>
+    <!-- contact Ends -->
+
+    <!-- Footer Starts -->
+    <jcms:module:footer-booking/>
+    <!-- Footer Ends -->
+    <jcms:module:subscribers:login-register-form/>
+    
+    <!-- Back to top start -->
+    <div id="back-to-top">
+        <a href="#"></a>
+    </div>
+    <!-- Back to top ends -->
+
+    <!-- *Scripts* -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/custom-nav.js"></script>
+    <script src="js/custom-swiper2.js"></script>
+    <script src="js/custom-singledate.js"></script>
+    <script src="js/jquery.validate.js"></script>
+
+    <script>
+        $(function(){
+            
+        })
+    </script>
+    <script type="text/javascript">
+        var base_url = $('base').attr('url');
+        $(document).ready(function () {
+            // console.log(base_url);
+            $('#frm_contact').validate({
+                errorElement: 'span',
+                errorClass: 'validate-has-error',
+                rules: {
+                    name: {required: true},
+                    phone: {required: true},
+                    email: {required: true, email: true},
+                    message: {required: true}
+                },
+                messages: {
+                    name: {required: "Please enter your Name."},
+                    phone: {required: "Please enter your Phone Number."},
+                    email: {required: "Please enter your Email Address."},
+                    message: {required: "Please enter your Message."}
+                },
+                submitHandler: function (form) {
+                    var Frmval = $("form#frm_contact").serialize();
+                    $("input#submit").attr("disabled", "true").val('Processing...');
+                    $.ajax({
+                        type: "POST",
+                        dataType: "JSON",
+                        url: base_url + "enquery_mail.php",
+                        data: "action=forContact&" + Frmval,
+                        success: function (data) {
+                            var msg = eval(data);
+                            $("input#submit").removeAttr("disabled").val('Submit');
+                            $('div#result_msg').html(msg.message).css('display', 'block').fadeOut(8000);
+                            $("form#frm_contact")[0].reset();
+                        }
+                    });
+                    return false;
+                }
+            })
+        });
+    </script>
+     <script>
+        $(function() {
+        
+        
+        $("#signinn").on("click", function() {
+          $("#home-tab").click();
+        });
+      });
+    </script>
+
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+<script type="text/javascript">
+    var base_url = jQuery('base').attr('url');
+    jQuery(document).ready(function () {
+        jQuery('#frm_contact').validate({
+            errorElement: 'span',
+            errorClass: 'validate-has-error',
+            rules: {
+                txt_name: {
+                    required: true
+                },
+                txt_phone: {
+                    required: true
+                },
+                txt_email: {
+                    required: true,
+                    email: true
+                },
+                txt_message: {
+                    required: true
+                }
+            },
+            messages: {
+                txt_name: {
+                    required: "This field is required. Please enter your Name."
+                },
+                txt_phone: {
+                    required: "Please enter your Contact Number."
+                },
+                txt_email: {
+                    required: "Email required."
+                },
+                txt_message: {
+                    required: "Enter your comments."
+                }
+            },
+            submitHandler: function (form) {
+                var recaptcha = $("#g-recaptcha-response").val();
+                if (recaptcha === "") {
+                    event.preventDefault();
+                    alert("Please check the recaptcha");
+                    return false;
+                }
+                var Frmval = jQuery("form#frm_contact").serialize();
+                jQuery("button#submit").attr("disabled", "true").text('Processing...');
+                jQuery.ajax({
+                    type: "POST",
+                    dataType: "JSON",
+                    url: base_url + "enquery_mail.php",
+                    data: "action=forcoment&" + Frmval,
+                    success: function (data) {
+                        var msg = eval(data);
+                        jQuery("button#submit").removeAttr("disabled").text('Submit');
+                        jQuery('div#result_msg').html(msg.message).css('display', 'block').fadeOut(8000);
+                        jQuery("form#frm_contact")[0].reset();
+                    }
+                });
+                return false;
+            }
+        })
+    });
+</script>
+</body>
+</html>

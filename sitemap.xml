@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+    <loc>http://localhost/siddharthabiz/</loc>
+    <lastmod>2023-11-24T15:06:04+05:45</lastmod>
+    <priority>1</priority>
+</url>
+
+        <url>
+            <loc>http://localhost/siddharthabiz/home</loc>
+            <lastmod>2023-11-24T15:06:04+05:45</lastmod>
+            <priority>0.9</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/contact</loc>
+            <lastmod>2023-11-24T15:06:04+05:45</lastmod>
+            <priority>0.9</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/meetingandevents</loc>
+            <lastmod>2023-11-24T15:06:04+05:45</lastmod>
+            <priority>0.9</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/offers</loc>
+            <lastmod>2023-11-24T15:06:04+05:45</lastmod>
+            <priority>0.9</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/blog</loc>
+            <lastmod>2023-11-24T15:06:04+05:45</lastmod>
+            <priority>0.9</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/faq</loc>
+            <lastmod>2023-11-24T15:06:04+05:45</lastmod>
+            <priority>0.9</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/page/about-us</loc>
+            <lastmod>2023-09-26T23:32:46+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/page/faq-vehicle-with-adv</loc>
+            <lastmod>2021-10-03T17:20:07+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/page/popular-hire-brands</loc>
+            <lastmod>2021-10-03T17:18:43+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/page/privacy</loc>
+            <lastmod>2017-01-11T16:36:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/page/siddhartha-business-group-of-br-hospitality-pvt-ltd</loc>
+            <lastmod>2016-08-20T15:28:12+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-cottage-butwal</loc>
+            <lastmod>2021-07-16T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/hotel-siddhartha-nepalgunj</loc>
+            <lastmod>2021-07-16T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/hotel-kailali-siddhartha-tikapur</loc>
+            <lastmod>2021-07-16T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-river-side-resort-chumlingtar</loc>
+            <lastmod>2021-07-16T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-boutique-hotel-boudha</loc>
+            <lastmod>2021-07-18T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-hotel-grand-city-birtamode</loc>
+            <lastmod>2021-08-25T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-hotel-new-anand-mahendranagar</loc>
+            <lastmod>2021-08-26T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-sunny-resort-surkhet</loc>
+            <lastmod>2021-09-29T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-resort-chisapani</loc>
+            <lastmod>2021-09-29T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-hotel-water-tower-nuwakot</loc>
+            <lastmod>2021-10-11T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-lumbini-green-resort-chandrauta</loc>
+            <lastmod>2023-09-22T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/s-cafe-kohalpur</loc>
+            <lastmod>2023-10-04T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/s-caf-tinkune-kathmandu</loc>
+            <lastmod>2023-10-08T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-vilasa-banbas-resort</loc>
+            <lastmod>2023-10-08T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-cottage-restaurant-bar-tinkune</loc>
+            <lastmod>2023-10-08T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/peace-siddhartha-cottage-restaurant-nepalgunj</loc>
+            <lastmod>2023-10-08T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-cottage-restaurant-dhobighat-lalitpur</loc>
+            <lastmod>2023-10-08T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/s-cafe-manmohan-kathmandu</loc>
+            <lastmod>2023-10-08T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/s-cafe-dhomboji-nepalgunj</loc>
+            <lastmod>2023-10-08T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhartha-foodland-old-baneshwor</loc>
+            <lastmod>2023-10-11T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/hotel-siddhartha-sundhara</loc>
+            <lastmod>2023-10-11T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddhatha-hotel-lumbini-green-lamahi</loc>
+            <lastmod>2023-10-12T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/siddartha-sweets-and-bakery-koteshwor-kathmandu</loc>
+            <lastmod>2023-10-13T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/hotel/s-cafe-tuth-maharajgunj</loc>
+            <lastmod>2023-10-13T00:00:00+05:45</lastmod>
+            <priority>0.75</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/blog/happy-customer</loc>
+            <lastmod>2023-10-02T16:17:15+05:45</lastmod>
+            <priority>0.70</priority>
+        </url>
+    
+        <url>
+            <loc>http://localhost/siddharthabiz/blog/trekking-in-nepal</loc>
+            <lastmod>2023-10-02T13:01:31+05:45</lastmod>
+            <priority>0.70</priority>
+        </url>
+    </urlset>

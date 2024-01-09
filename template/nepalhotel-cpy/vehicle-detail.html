@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <!--=============== basic  ===============-->
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+    <!--=============== css  ===============-->
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
+    <!--=============== favicons ===============-->
+
+</head>
+<body>
+<!--loader-->
+<div class="loader-wrap">
+    <div class="pin">
+        <div class="pulse"></div>
+    </div>
+</div>
+<!--loader end-->
+<!-- Main  -->
+<div id="main">
+    <!-- header-->
+    <header class="main-header">
+        <!-- header-top-->
+        <div class="header-top fl-wrap">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="logo-holder">
+                        <jcms:module:logo/>
+                        <!--  <a href="index.html"><img src="images/logo.png" alt=""></a> -->
+                    </div>
+                    <div class="greeting">
+                        <a href="<jcms:site:base_url/>listproperty" class="btn btn-outline-light btn-sm d-inline-block">List your property</a>
+                        <jcms:module:subscribers:login-welcome/>
+                    </div>
+                </div>
+                <div class="nav-holder main-menu">
+                    <nav>
+                        <jcms:module:menu/>
+                    </nav>
+                </div>
+                <!-- <a href="dashboard-add-#" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>
+                <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div> -->
+                <!-- <div class="lang-wrap">
+                    <div class="show-lang"><img src="images/lan/1.png" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
+                    <ul class="lang-tooltip green-bg">
+                        <li><a href="#"><img src="images/lan/4.png" alt=""> De</a></li>
+                        <li><a href="#"><img src="images/lan/5.png" alt=""> It</a></li>
+                        <li><a href="#"><img src="images/lan/2.png" alt=""> Fr</a></li>
+                        <li><a href="#"><img src="images/lan/3.png" alt=""> Es</a></li>
+                    </ul>
+                </div> -->
+                <!-- <div class="currency-wrap">
+                    <div class="show-currency-tooltip"><i class="fas fa-dollar-sign"></i> <span>USD <i class="fa fa-caret-down"></i> </span></div>
+                    <ul class="currency-tooltip">
+                        <li><a href="#"><i class="far fa-euro-sign"></i> EUR</a></li>
+                        <li><a href="#"><i class="far fa-pound-sign"></i> GBP</a></li>
+                        <li><a href="#"><i class="far fa-ruble-sign"></i>RUR</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <!-- header-top end-->
+    </header>
+    <!--  header end -->
+    <!--  wrapper  -->
+    <div id="wrapper">
+        <!-- content-->
+        <section class="grey-blue-bg small-padding" id="sec1">
+            <div class="container">
+                <div class="row">
+                    <!--filter sidebar -->
+                    <div class="col-md-3">
+                        <div class="mobile-list-controls fl-wrap">
+                            <div class="mlc show-list-wrap-search fl-wrap"><i class="fal fa-filter"></i> Filter</div>
+                        </div>
+                        <div class="fl-wrap filter-sidebar_item fixed-bar">
+                            <div class="filter-sidebar fl-wrap lws_mobile">
+                                <!--col-list-search-input-item -->
+                                <div class="col-list-search-input-item in-loc-dec fl-wrap not-vis-arrow">
+                                    <label>City</label>
+                                    <div class="listsearch-input-item">
+                                        <select data-placeholder="City" class="chosen-select" >
+                                            <option>From</option>
+                                            <option>New York</option>
+                                            <option>London</option>
+                                            <option>Paris</option>
+                                            <option>Kiev</option>
+                                            <option>Moscow</option>
+                                            <option>Dubai</option>
+                                            <option>Rome</option>
+                                            <option>Beijing</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-list-search-input-item in-loc-dec fl-wrap not-vis-arrow">
+                                    <label>Destination</label>
+                                    <div class="listsearch-input-item">
+                                        <select data-placeholder="City" class="chosen-select" >
+                                            <option>To</option>
+                                            <option>New York</option>
+                                            <option>London</option>
+                                            <option>Paris</option>
+                                            <option>Kiev</option>
+                                            <option>Moscow</option>
+                                            <option>Dubai</option>
+                                            <option>Rome</option>
+                                            <option>Beijing</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--col-list-search-input-item end-->                      
+                               
+                                <!--col-list-search-input-item -->
+                                <div class="col-list-search-input-item in-loc-dec date-container  fl-wrap">
+                                    <label>Date In-Out </label>
+                                    <span class="header-search-input-item-icon"><i class="fal fa-calendar-check"></i></span>
+                                    <input type="text"   placeholder="When" name="dates"   value=""/>
+                                </div>
+                                <!--col-list-search-input-item end-->
+                                <!--col-list-search-input-item -->
+                                <div class="col-list-search-input-item fl-wrap">
+                                   
+                                    <div class="quantity-item">
+                                        <label>Adults</label>
+                                        <div class="quantity">
+                                            <input type="number" min="1" max="5" step="1" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="quantity-item">
+                                        <label>Children</label>
+                                        <div class="quantity">
+                                            <input type="number" min="0" max="3" step="1" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--col-list-search-input-item end-->
+                               
+                                <!--col-list-search-input-item end-->  
+                                <!--col-list-search-input-item  -->                                         
+                                <div class="col-list-search-input-item fl-wrap">
+                                    <button class="header-search-button" onclick="window.location.href='listing.html'">Search <i class="far fa-search"></i></button>
+                                </div>
+                                <!--col-list-search-input-item end--> 
+                            </div>
+                        </div>
+                    </div>
+                    <!--filter sidebar end-->
+                    <!--listing -->
+                    <div class="col-md-9">
+                        <!--col-list-wrap -->
+                        <div class="col-list-wrap fw-col-list-wrap post-container">
+                            <!-- list-main-wrap-->
+                            <div class="list-main-wrap fl-wrap card-listing">
+                                
+                                <!-- listing-item-container -->
+                                <div class="listing-item-container init-grid-items fl-wrap">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item has_one_column">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="listing-single.html"><img src="images/gal/1.jpg" alt=""></a>
+                                               
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="listing-single.html">Fiat 500 or Similar</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i> Pokhara</a></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-8 text-start">
+                                                        <ul class="facilities-list fl-wrap">
+                                                            <li><img src="images/profile-user.svg" width="20px" /> 4<span>Pax: 4</span></li>
+                                                            <li><img src="images/car-door.svg" width="20px" /> 4<span>Window: 4</span></li>
+                                                            <li><img src="images/air-conditioning.svg" width="20px" /> Aircon<span>Air Conditioner: Aircon</span></li>
+                                                            <li><img src="images/gear-stick.svg" width="20px" /> Manual<span> Gear: Manual</span></li>
+                                                        </ul>
+                                                        <p><strong>Fuel Policy:</strong> Like for Like <br/>
+                                                            <strong>Mileage:</strong> 3000 km per rental</p>
+
+                                                            <button class="btn btn-primary text-start">Book Now</button>
+                                                    </div>
+                                                    <div class="col-sm-4">
+
+                                                        <span class="fs-4">$ 320</span> per person
+                                                    </div>
+                                                </div>
+                                                
+                                             
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->
+                                                          
+                                                                                
+                                </div>
+                                <!-- listing-item-container end-->
+
+                                
+
+                                <div class="list-single-main-item fl-wrap" id="">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="list-single-main-item-title fl-wrap">
+                                                <h3>Price Includes</h3>
+                                            </div>
+                                            <div class="listing-features ">
+                                                   <ul>
+                                                       <li>
+                                                       <i class="fa fa-check-circle"></i> Amendments
+                                                       
+                                                        
+                                                       
+                                                        </li>
+                                                       <li><i class="fa fa-check-circle"></i> Theft Protection</li>
+                                                       <li > <i class="fa fa-check-circle"></i>Collision Damage Waiver</li>
+                                                   </ul>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+
+                                <div class="list-single-main-item fl-wrap" id="">
+                                    <div class="row">
+                                        <div class="col-sm-7">
+                                            
+                                            <div class="listing-features ">
+                                                Show in Map
+                                                <iframe src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d56518.18019485815!2d85.31677085668944!3d27.705357857429192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1632806675011!5m2!1sen!2snp' width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="list-single-main-item-title ">
+                                                <h3>Suppliers Map</h3>
+                                            </div>
+
+                                            <div class="listing-features text-start" >
+                                                <strong> Pick Up & Drop Off</strong>
+                                                <br>
+                                                Kathmandu - Pokhara<br><br>
+                                                <strong>Opening hours</strong><br>
+                                                Mon - Sun	5am - 12am<br><br>
+                                                <strong>Pick-up instructions</strong><br>
+                                                Take the 'National Express Hotel Hoppa' bus to the office. Terminal 2 - Bus H4 from bus stops 9 and 10. Terminal 3 - Bus H2 from stops 12 and 13. Terminal 4 - Bus H5 from stop 8 and 9. Terminal 5 - Bus H5 from stop 17 and 18. Non Airport Collection - Please collect directly from the office located.
+                                            </div>
+                                                                       
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <!-- list-main-wrap end-->
+                        </div>
+                        <!--col-list-wrap end -->
+
+                        
+                    </div>
+                    <!--listing  end-->
+                </div>
+                <!--row end-->
+            </div>
+            <div class="limit-box fl-wrap"></div>
+        </section>
+
+        <!-- content end-->
+    </div>
+    <!--wrapper end -->
+    <!--footer -->
+    <footer class="main-footer">
+        <!--footer-inner-->
+        <div class="footer-inner">
+            <div class="container">
+                <!--footer-fw-widget-->
+
+                <!--footer-fw-widget end-->
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p>
+                            <jcms:module:footerBrief/>
+                        </p>
+                        <br><br><br>
+                    </div>
+                    <!--footer-widget -->
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+
+                            <div class="footer-contacts-widget fl-wrap">
+                                <jcms:module:footer-contactinfo/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <jcms:module:socialbottom/>
+
+                    <div class="col-md-4">
+
+                        <jcms:module:customersupport/>
+
+                    </div>
+                    <!--footer-widget end-->
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+        <!--footer-inner end -->
+        <div class="footer-bg">
+        </div>
+        <!--sub-footer-->
+        <div class="sub-footer">
+            <div class="container">
+
+                <div class="copyright">
+                    <jcms:site:copyright/>
+                </div>
+
+                <div class="subfooter-nav">
+                    <jcms:module:footer-menu/>
+
+                </div>
+            </div>
+        </div>
+        <!--sub-footer end -->
+    </footer>
+
+    <!--footer end -->
+    <!--register form -->
+    <jcms:module:subscribers:login-register-form/>
+    <!--register form end -->
+    <a class="to-top"><i class="fas fa-caret-up"></i></a>
+</div>
+<!-- Main end -->
+<!--=============== scripts  ===============-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script>
+</body>
+</html>

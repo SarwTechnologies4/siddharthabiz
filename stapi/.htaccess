@@ -1,0 +1,23 @@
+RewriteEngine On
+
+#AddHandler application/x-httpd-php56 .php .php5 .php4 .php3
+
+#for home page. i.e. index.php
+
+RewriteRule ^home$ index.php [L]
+
+RewriteRule ^api$ api.php [L]
+
+
+
+RewriteRule ^room_json/types/([\w]+)$ room_json.php?mode=room_type&code=$1 [L]
+
+RewriteRule ^room_json/room/([\w]+)$ room_json.php?mode=room&code=$1 [L]
+
+RewriteRule ^room_json/type/([\w]+)/([0-9]+)$ room_json.php?mode=room_type_detail&code=$1&id=$2 [L]
+
+RewriteRule ^room_json/type/([\w]+)/(.*)$ room_json.php?mode=room_type_detail&code=$1&id=$2 [L]
+
+RewriteRule ^room_json/detail/([\w]+)/([0-9]+)$ room_json.php?mode=room_detail&code=$1&id=$2 [L]
+
+RewriteRule ^room_json/detail/([\w]+)/(.*)$ room_json.php?mode=room_detail&code=$1&id=$2 [L]

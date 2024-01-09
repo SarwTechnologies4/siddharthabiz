@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--=============== css  ===============-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
+    <!--=============== favicons ===============-->
+    <!--  <link rel="shortcut icon" href="images/favicon.ico"> -->
+</head>
+
+<body>
+<!--loader-->
+<div class="loader-wrap">
+    <div class="pin">
+        <div class="pulse"></div>
+    </div>
+</div>
+<!--loader end-->
+
+<!-- Main  -->
+<div id="main">
+    <!-- header-->
+    <header class="main-header">
+        <!-- header-top-->
+        <div class="header-top fl-wrap">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="logo-holder">
+                        <jcms:module:logo/>
+                        <!--  <a href="index.html"><img src="images/logo.png" alt=""></a> -->
+                    </div>
+                    <div class="greeting">
+                        <a href="<jcms:site:base_url/>listproperty" class="btn btn-outline-light btn-sm d-inline-block">List your property</a>
+                        <jcms:module:subscribers:login-welcome/>
+                    </div>
+                </div>
+                <div class="nav-holder main-menu">
+                    <nav>
+                        <jcms:module:menu/>
+                    </nav>
+                </div>
+                <!-- <a href="dashboard-add-#" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>
+                <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div> -->
+                <!-- <div class="lang-wrap">
+                    <div class="show-lang"><img src="images/lan/1.png" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
+                    <ul class="lang-tooltip green-bg">
+                        <li><a href="#"><img src="images/lan/4.png" alt=""> De</a></li>
+                        <li><a href="#"><img src="images/lan/5.png" alt=""> It</a></li>
+                        <li><a href="#"><img src="images/lan/2.png" alt=""> Fr</a></li>
+                        <li><a href="#"><img src="images/lan/3.png" alt=""> Es</a></li>
+                    </ul>
+                </div> -->
+                <!-- <div class="currency-wrap">
+                    <div class="show-currency-tooltip"><i class="fas fa-dollar-sign"></i> <span>USD <i class="fa fa-caret-down"></i> </span></div>
+                    <ul class="currency-tooltip">
+                        <li><a href="#"><i class="far fa-euro-sign"></i> EUR</a></li>
+                        <li><a href="#"><i class="far fa-pound-sign"></i> GBP</a></li>
+                        <li><a href="#"><i class="far fa-ruble-sign"></i>RUR</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <!-- header-top end-->
+    </header>
+
+    <!--  header end -->
+
+    <!--  wrapper  -->
+    <div id="wrapper">
+        <!-- content-->
+        <div class="content">
+            <!--  section  -->
+            <jcms:module:hotel-details/><!--price dekhaira xaoina
+               book now nt clicable-->
+            <!--  section  end-->
+        </div>
+        <!-- content end-->
+        <div class="limit-box fl-wrap"></div>
+    </div>
+    <!--wrapper end -->
+
+    <!--footer -->
+    <footer class="main-footer">
+        <!--footer-inner-->
+        <div class="footer-inner">
+            <div class="container">
+                <!--footer-fw-widget-->
+
+                <!--footer-fw-widget end-->
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p>
+                            <jcms:module:footerBrief/>
+                        </p>
+                        <br><br><br>
+                    </div>
+                    <!--footer-widget -->
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+
+                            <div class="footer-contacts-widget fl-wrap">
+                                <jcms:module:footer-contactinfo/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <jcms:module:socialbottom/>
+
+                    <div class="col-md-4">
+
+                        <jcms:module:customersupport/>
+
+                    </div>
+                    <!--footer-widget end-->
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+        <!--footer-inner end -->
+        <div class="footer-bg">
+        </div>
+        <!--sub-footer-->
+        <div class="sub-footer">
+            <div class="container">
+
+                <div class="copyright">
+                    <jcms:site:copyright/>
+                </div>
+
+                <div class="subfooter-nav">
+                    <jcms:module:footer-menu/>
+
+                </div>
+            </div>
+        </div>
+        <!--sub-footer end -->
+    </footer>
+
+    <!--register form -->
+    <jcms:module:subscribers:login-register-form/>
+    <!--register form end -->
+    <a class="to-top"><i class="fas fa-caret-up"></i></a>
+</div>
+<!-- Main end -->
+
+<!--=============== scripts  ===============-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script>
+<script type="text/javascript" src="js/map-single.js"></script>
+
+<script>
+    $(".book-btn-check").click(function (e) {
+        e.preventDefault();
+
+        var query = $(this).attr('data-query');
+        var base_url = $('base').attr('url');
+        var hotel_slug = $('hotel').attr('slug');
+
+        $.ajax({
+            type: "POST",
+            dataType: "JSON",
+            url: base_url + "includes/controllers/ajax.user.php",
+            data: "action=check_login_for_booking&hotel_slug=" + hotel_slug,
+            success: function (data) {
+                var msg = eval(data);
+                if (msg.action == 'success') {
+                    window.open(base_url + 'result.php?' + query, '_self');
+                }
+                if (msg.action == 'unsuccess_login') {
+                    $('.modal , .reg-overlay').fadeIn(200);
+                    $("html, body").addClass("hid-body");
+                    $('#msgLogin').html("Please Log In.").css('display', 'block').fadeOut(8000);
+                }
+                if (msg.action == 'unsuccess_noemail') {
+                    alert("Your Email Address has not been set!! Please set your email address!!");
+                    window.location.href = base_url + "dashboard/profile";
+                }
+                if (msg.action == 'unsuccess_emailverify') {
+                    alert("Your Email Address has not been verified!! Please check your email for verification!!");
+                }
+            }
+        });
+
+    });
+</script>
+
+<script>
+    var base_url = jQuery('base').attr('url');
+    if ($('#hotelsearchform')[0]) {
+
+        $("#searchkey").autocomplete({
+            source: base_url + "hotelcomplete.php",
+            // minLength: 2,
+            showHintOnFocus: true,
+            select: function (event, ui) {
+                $('input[name="hotelid"]').val(ui.item.id);
+            }
+        });
+
+        $('#checkin').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'yy-mm-dd',
+            minDate: '0',
+            maxDate: '+2Y',
+            onSelect: function (dateStr) {
+                var d1 = $(this).datepicker("getDate");
+                d1.setDate(d1.getDate() + 1); // change to + 1 if necessary
+                var d2 = $(this).datepicker("getDate");
+                d2.setDate(d2.getDate() + 180); // change to + 180 if necessary
+                $("#checkout").datepicker("option", "minDate", d1);
+                $("#checkout").datepicker("option", "maxDate", d2);
+                var start = $("#checkin").datepicker("getDate");
+                var end = $("#checkout").datepicker("getDate");
+                var days = (end - start) / 1000 / 60 / 60 / 24;
+                if (end != null)
+                    var dd = $(this).datepicker("getDate");
+                $('#checkout').datepicker('setDate', d1);
+            }
+        });
+
+        $('#checkout').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'yy-mm-dd',
+            minDate: $("#checkin").datepicker("getDate"),
+            maxDate: '+2Y'
+        });
+
+        $("#hotelsearchform").validate({
+            errorElement: 'span',
+            errorClass: 'validate-has-error',
+            rules: {
+                searchkey: {required: true,},
+                hotelid: {required: true}
+            },
+            messages: {
+                searchkey: {required: "Please enter a destination to start searching.",},
+                hotelid: {required: ''}
+            },
+            submitHandler: function (form) {
+                var Frmval = $("#hotelsearchform").serialize();
+                $("#btn-search").attr("disabled", "true").html('Loading...');
+                $.ajax({
+                    type: "POST",
+                    dataType: "JSON",
+                    url: base_url + "hotelcomplete.php",
+                    data: "action=getlink&" + Frmval,
+                    success: function (data) {
+                        var msg = eval(data);
+                        window.location.href = base_url + "search/" + data.url;
+                    }
+                });
+                return false;
+            }
+        });
+
+    }
+</script>
+
+</body>
+</html>

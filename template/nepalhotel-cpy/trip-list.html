@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <!--=============== basic  ===============-->
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+    <!--=============== css  ===============-->
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jplist.styles.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
+    <!--=============== favicons ===============-->
+
+</head>
+<body>
+<!--loader-->
+<div class="loader-wrap">
+    <div class="pin">
+        <div class="pulse"></div>
+    </div>
+</div>
+<!--loader end-->
+<!-- Main  -->
+<div id="main">
+    <!-- header-->
+    <header class="main-header">
+        <!-- header-top-->
+        <div class="header-top fl-wrap">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="logo-holder">
+                        <jcms:module:logo/>
+                        <!--  <a href="index.html"><img src="images/logo.png" alt=""></a> -->
+                    </div>
+                    <div class="greeting">
+                        <a href="<jcms:site:base_url/>listproperty" class="btn btn-outline-light btn-sm d-inline-block">List your property</a>
+                        <jcms:module:subscribers:login-welcome/>
+                    </div>
+                </div>
+                <div class="nav-holder main-menu">
+                    <nav>
+                        <jcms:module:menu/>
+                    </nav>
+                </div>
+                
+            </div>
+        </div>
+        <!-- header-top end-->
+    </header>
+    <!--  header end -->
+    <!--  wrapper  -->
+    <div id="wrapper">
+        <!-- content-->
+     
+        <div class="content">
+            <section class=" small-padding" id="sec1">
+                <div class="container">
+                    <div class="row">
+                        <!--filter sidebar -->
+                        <div class="col-md-3">
+                            <div class="mobile-list-controls fl-wrap">
+                                <div class="mlc show-list-wrap-search fl-wrap"><i class="fal fa-filter"></i> Filter</div>
+                            </div>
+                            <div class="fl-wrap filter-sidebar_item fixed-bar">
+                                <div class="filter-sidebar fl-wrap lws_mobile">
+                                    <!-- Package Module -->
+
+                                    <jcms:module:package:search-form/>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--filter sidebar end-->
+
+                        <!--listing -->
+                        <div class="col-md-9">
+                            <!--col-list-wrap -->
+                            <h1 class="fs-4 mt-4 mb-4 text-start">Trip packages</h1>
+                            <div class="col-list-wrap fw-col-list-wrap post-container">
+                                <!-- list-main-wrap-->
+
+                                <div class="list-main-wrap fl-wrap card-listing">
+                                    <!-- list-main-wrap-opt-->
+                                    <div class="list-main-wrap-opt fl-wrap">
+                                        <!-- Package Module-->
+
+
+                                        <!-- price-opt-->
+                                        <div class="price-opt">
+                                            <span class="price-opt-title">Sort results by:</span>
+                                            <div class="listsearch-input-item">
+                                                <select data-placeholder="Popularity" class="chosen-selec nice-select no-search-select"
+                                                        data-jplist-control="select-sort"
+                                                        data-group="group1"
+                                                        data-name="name0">
+
+                                                    <!--
+                                                    <option value="1"
+                                                            data-path=".ttitle"
+                                                            data-order="asc"
+                                                            data-type="text">Title: A-Z
+                                                    </option>
+
+                                                    <option value="2"
+                                                            data-path=".ttitle"
+                                                            data-order="desc"
+                                                            data-type="text">Title: Z-A
+                                                    </option>
+                                                    -->
+
+                                                    <option value="5"
+                                                            data-path=".price"
+                                                            data-order="asc"
+                                                            data-type="number">Price: Lowest to Highest
+                                                    </option>
+
+                                                    <option value="6"
+                                                            data-path=".price"
+                                                            data-order="desc"
+                                                            data-type="number">Price: Highest to Lowest
+                                                    </option>
+                                                </select>
+
+                                              
+                                            </div>
+                                        </div>
+                                        <!-- price-opt end-->
+                                        <!-- price-opt-->
+                                        <div class="grid-opt">
+                                            <ul>
+                                                <li><span class="one-col-grid act-grid-opt me-2"><i class="fas fa-bars"></i></span></li>
+                                                <li><span class="two-col-grid  "><i class="fas fa-th-large"></i></span></li>
+                                            </ul>
+                                        </div>
+                                        <!-- price-opt end-->
+                                    </div>
+                                    <!-- list-main-wrap-opt end-->
+
+                                    <!-- listing-item-container -->
+                                    <div class="listing-item-container init-grid-items fl-wrap" data-jplist-group="group1">
+
+                                        <jcms:module:package:detail/>
+
+
+                                    </div>
+                                    <!-- listing-item-container end-->
+                                    <!--<a class="load-more-button" href="#">Load more <i class="fal fa-spinner"></i> </a>-->
+
+                                </div>
+                                <!-- list-main-wrap end-->
+                            </div>
+                            <!--col-list-wrap end -->
+                            <nav
+                                    data-jplist-control="pagination"
+                                    data-group="group1"
+                                    data-items-per-page="30"
+                                    data-current-page="0"
+                                    data-disabled-class="disabled"
+                                    data-selected-class="active">
+
+                                <!-- first and previous buttons -->
+                                <ul class="pagination d-inline-flex">
+                                    <li class="page-item" data-type="first">
+                                        <a class="page-link" href="#"><i class="fa fa-backward"></i></a>
+                                    </li>
+                                    <li class="page-item" data-type="prev">
+                                        <a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
+                                    </li>
+                                </ul>
+
+                                <!-- pages buttons -->
+                                <ul class="pagination d-inline-flex" data-type="pages">
+                                    <li class="page-item" data-type="page"><a class="page-link" href="#">{pageNumber}</a></li>
+                                </ul>
+
+                                <!-- next and last buttons -->
+                                <ul class="pagination d-inline-flex">
+                                    <li class="page-item" data-type="next">
+                                        <a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a>
+                                    </li>
+                                    <li class="page-item" data-type="last">
+                                        <a class="page-link" href="#"><i class="fa fa-forward"></i></a>
+                                    </li>
+                                </ul>
+
+                                <!-- items per page dropdown -->
+                                <div class="dropdown d-inline-flex ml-3"
+                                     data-type="items-per-page-dd"
+                                     data-opened-class="show">
+                                </div>
+                                <br>
+                                <!-- information labels -->
+                                <span data-type="info" class=" ml-3 p-2">Page {pageNumber} of {pagesNumber}</span>
+
+                            </nav>
+                        </div>
+                        <!--listing  end-->
+                    </div>
+                    <!--row end-->
+                </div>
+                <div class="limit-box fl-wrap"></div>
+            </section>
+        </div>
+
+        <!-- content end-->
+    </div>
+    <!--wrapper end -->
+    <!--footer -->
+    <footer class="main-footer">
+        <!--footer-inner-->
+        <div class="footer-inner">
+            <div class="container">
+                <!--footer-fw-widget-->
+
+                <!--footer-fw-widget end-->
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p>
+                            <jcms:module:footerBrief/>
+                        </p>
+                        <br><br><br>
+                    </div>
+                    <!--footer-widget -->
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+
+                            <div class="footer-contacts-widget fl-wrap">
+                                <jcms:module:footer-contactinfo/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <jcms:module:socialbottom/>
+
+                    <div class="col-md-4">
+
+                        <jcms:module:customersupport/>
+
+                    </div>
+                    <!--footer-widget end-->
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+        <!--footer-inner end -->
+        <div class="footer-bg">
+        </div>
+        <!--sub-footer-->
+        <div class="sub-footer">
+            <div class="container">
+
+                <div class="copyright">
+                    <jcms:site:copyright/>
+                </div>
+
+                <div class="subfooter-nav">
+                    <jcms:module:footer-menu/>
+
+                </div>
+            </div>
+        </div>
+        <!--sub-footer end -->
+    </footer>
+    <!--footer end -->
+    <!--register form -->
+    <jcms:module:subscribers:login-register-form/>
+    <!--register form end -->
+    <a class="to-top"><i class="fas fa-caret-up"></i></a>
+</div>
+<!-- Main end -->
+<!--=============== scripts  ===============-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script>-->
+<script type="text/javascript" src="js/jplist.min.js"></script>
+
+<script>
+    jplist.init();
+
+    var base_url = jQuery('base').attr('url');
+    $(function () {
+        $("#tourSearchBtn").click(function (e) {
+            e.preventDefault();
+            var Frmval = $("#toursearchform").serialize();
+            $("#tourSearchBtn").attr("disabled", "true").html('Loading...');
+            $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                url: base_url + "hotelcomplete.php",
+                data: "action=getlinktour&" + Frmval,
+                success: function (data) {
+                    var msg = eval(data);
+                    window.location.href = base_url + "package/search/" + data.url;
+                }
+            });
+        });
+    })
+</script>
+
+</body>
+</html>

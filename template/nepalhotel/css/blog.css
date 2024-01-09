@@ -1,0 +1,26 @@
+.blog_wrapper .news-item{
+	padding: 20px;
+    background: #fff;
+}
+
+.blog_wrapper .news-item .news-content p {
+    background: transparent;
+    width: 100%;
+    padding: 0px;
+    color: #000;
+    position: relative;
+    text-transform: none;
+    font-size: 16px;
+    top: 0px;
+}
+.blog_wrapper .news-item .news-content h4 {
+    margin-bottom: 11px;
+    text-transform: capitalize;
+    margin-top: 12px;
+}
+
+.news-image {
+    overflow: hidden;
+    height: 210px;
+    margin-top: 15px;
+  }

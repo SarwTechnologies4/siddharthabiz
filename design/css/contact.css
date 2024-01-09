@@ -1,0 +1,39 @@
+.contact-info{
+    margin-bottom: 50px;
+    background: #fff;
+    padding: 70px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+}
+.contact-info1{
+    padding: 40px 70px;
+}
+
+.contact-form ::placeholder{
+    color: #000;
+}
+
+.contact-form input, .contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 44px;
+}
+.contact-form #submit.btn-orange {
+    background: #065aa9;
+    color: #fff;
+    width: 100%;
+}
+.info-icon {
+    position: absolute;
+    color: #000;
+    font-size: 48px;
+    left: 10%;
+    top: 28%;
+}
+
+.info-icon h5{
+    text-transform: capitalize;
+}

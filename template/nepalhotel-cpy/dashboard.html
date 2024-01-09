@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <!--=============== basic  ===============-->
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+    <!--=============== css  ===============-->
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jplist.styles.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
+    <!--=============== favicons ===============-->
+
+</head>
+<body>
+<!--loader-->
+<div class="loader-wrap">
+    <div class="pin">
+        <div class="pulse"></div>
+    </div>
+</div>
+<!--loader end-->
+<!-- Main  -->
+<div id="main">
+    <!-- header-->
+    <header class="main-header">
+        <!-- header-top-->
+        <div class="header-top fl-wrap">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="logo-holder">
+                        <jcms:module:logo/>
+                        <!--  <a href="index.html"><img src="images/logo.png" alt=""></a> -->
+                    </div>
+                    <div class="greeting">
+                        <a href="<jcms:site:base_url/>listproperty" class="btn btn-outline-light btn-sm">List your property</a>
+                        <!--
+                        <a href="javascript:void(0)" class="btn btn-light btn-sm modal-open ms-1" data-target="#login"><i
+                                class="fa fa-sign-in-alt"></i> Login</a>
+                        -->
+                    </div>
+                </div>
+                <div class="nav-holder main-menu">
+                    <nav>
+                        <jcms:module:menu/>
+                    </nav>
+                </div>
+                <!-- <a href="dashboard-add-#" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>
+                <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div> -->
+                <!-- <div class="lang-wrap">
+                    <div class="show-lang"><img src="images/lan/1.png" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
+                    <ul class="lang-tooltip green-bg">
+                        <li><a href="#"><img src="images/lan/4.png" alt=""> De</a></li>
+                        <li><a href="#"><img src="images/lan/5.png" alt=""> It</a></li>
+                        <li><a href="#"><img src="images/lan/2.png" alt=""> Fr</a></li>
+                        <li><a href="#"><img src="images/lan/3.png" alt=""> Es</a></li>
+                    </ul>
+                </div> -->
+                <!-- <div class="currency-wrap">
+                    <div class="show-currency-tooltip"><i class="fas fa-dollar-sign"></i> <span>USD <i class="fa fa-caret-down"></i> </span></div>
+                    <ul class="currency-tooltip">
+                        <li><a href="#"><i class="far fa-euro-sign"></i> EUR</a></li>
+                        <li><a href="#"><i class="far fa-pound-sign"></i> GBP</a></li>
+                        <li><a href="#"><i class="far fa-ruble-sign"></i>RUR</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <!-- header-top end-->
+
+    </header>
+    <!--  header end -->
+    <!--  wrapper  -->
+    <div id="wrapper">
+        <!-- content-->
+        <div class="content">
+            <!-- section-->
+            <section class="flat-header color-bg adm-header">
+                <div class="wave-bg wave-bg2" ></div>
+                <div class="container" style="position:relative;z-index: 2;">
+                    <div class="dasboard-wrap fl-wrap">
+                        <div class="dasboard-breadcrumbs breadcrumbs"><a href="#">Home</a><a href="#">Dashboard</a><span>Profile page</span></div>
+                        <!--dasboard-sidebar-->
+                        <jcms:module:user:dashboard-sidebar/>
+                        <!--dasboard-sidebar end-->
+                        <!-- dasboard-menu-->
+                        <jcms:module:user:dashboard-menu/>
+                        <!--dasboard-menu end-->
+                        <!--Tariff Plan menu-->
+                        <div class="tfp-det">
+                            <p>You Are on <a href="#">Extended</a> . Use link bellow to view details or upgrade. </p>
+                            <a href="#" class="tfp-det-btn color2-bg">Details</a>
+                        </div>
+                        <!--Tariff Plan menu end-->
+                    </div>
+                </div>
+            </section>
+            <!-- section end-->
+            <!-- section-->
+            <section class="middle-padding">
+                <div class="container">
+                    <div class="dasboard-wrap fl-wrap">
+                        <!-- dashboard-content-->
+                        <jcms:module:user:dashboard-upcoming-booking/>
+                        <!-- dashboard-list-box end-->
+                    </div>
+                </div>
+            </section>
+            <!-- section end-->
+            <div class="limit-box fl-wrap"></div>
+
+        </div>
+        <!-- content end-->
+    </div>
+    <!--wrapper end -->
+    <!--footer -->
+    <footer class="main-footer">
+        <!--footer-inner-->
+        <div class="footer-inner">
+            <div class="container">
+                <!--footer-fw-widget-->
+
+                <!--footer-fw-widget end-->
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p>
+                            <jcms:module:footerBrief/>
+                        </p>
+                        <br><br><br>
+                    </div>
+                    <!--footer-widget -->
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+
+                            <div class="footer-contacts-widget fl-wrap">
+                                <jcms:module:footer-contactinfo/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <jcms:module:socialbottom/>
+
+                    <div class="col-md-4">
+
+                        <jcms:module:customersupport/>
+
+                    </div>
+                    <!--footer-widget end-->
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+        <!--footer-inner end -->
+        <div class="footer-bg">
+        </div>
+        <!--sub-footer-->
+        <div class="sub-footer">
+            <div class="container">
+
+                <div class="copyright">
+                    <jcms:site:copyright/>
+                </div>
+
+                <div class="subfooter-nav">
+                    <jcms:module:footer-menu/>
+
+                </div>
+            </div>
+        </div>
+        <!--sub-footer end -->
+    </footer>
+
+    <!--footer end -->
+    <a class="to-top"><i class="fas fa-caret-up"></i></a>
+</div>
+<!-- Main end -->
+<!--=============== scripts  ===============-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/jplist.min.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script>-->
+<script>
+    jplist.init();
+</script>
+</body>
+</html>

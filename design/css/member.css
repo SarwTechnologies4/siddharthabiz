@@ -1,0 +1,11 @@
+.about-para p{
+	font-size:19px;
+}
+.memebers{
+	padding: 20px 0 100px;
+    background: #f2f2f2;
+}
+.members .section-title h3{
+	font-weight: 400;
+    text-transform: capitalize;
+}

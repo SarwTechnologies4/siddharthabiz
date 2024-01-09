@@ -1,0 +1,1156 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <!--=============== basic  ===============-->
+        <!-- <meta charset="UTF-8">
+        <title>Gundri Booking</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="robots" content="index, follow"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/> -->
+        <jcms:site:fevicon/>
+        <jcms:site:seotitle/>
+
+        <!--=============== css  ===============-->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/plugins.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/color.css">
+        <!--=============== favicons ===============-->
+       <!--  <link rel="shortcut icon" href="images/favicon.ico"> -->
+    </head>
+    <body>
+        <!--loader-->
+        <div class="loader-wrap">
+            <div class="pin">
+                <div class="pulse"></div>
+            </div>
+        </div>
+        <!--loader end-->
+        <!-- Main  -->
+        <div id="main">
+            <!-- header-->
+            <header class="main-header">
+                <!-- header-top-->
+                <div class="header-top fl-wrap">
+                    <div class="container">
+                        <div class="logo-holder">
+                            <jcms:module:logo/>
+                           <!--  <a href="index.html"><img src="images/logo.png" alt=""></a> -->
+                        </div>
+                        <div class="nav-holder main-menu">
+                            <nav>
+                                <jcms:module:menu/>
+                                <!-- <ul>
+                                    
+                                     <li>
+                                        <a href="#" >Hotels </a>
+                                     
+                                    </li>
+                                    <li>
+                                        <a href="#" >Flights </a>
+                                     
+                                    </li>
+                                    <li>
+                                        <a href="#" >Packages </a>
+                                     
+                                    </li>
+                                    <li>
+                                        <a href="#" >Vehicle </a>
+                                     
+                                    </li>
+                                    <li>
+                                        <a href="#" >Contact </a>
+                                     
+                                    </li>
+                                </ul> -->
+                            </nav>
+                        </div>
+                        <!-- <a href="dashboard-add-#" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>                     
+                        <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div> -->
+                        <!-- <div class="lang-wrap">
+                            <div class="show-lang"><img src="images/lan/1.png" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
+                            <ul class="lang-tooltip green-bg">
+                                <li><a href="#"><img src="images/lan/4.png" alt=""> De</a></li>
+                                <li><a href="#"><img src="images/lan/5.png" alt=""> It</a></li>
+                                <li><a href="#"><img src="images/lan/2.png" alt=""> Fr</a></li>
+                                <li><a href="#"><img src="images/lan/3.png" alt=""> Es</a></li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="currency-wrap">
+                            <div class="show-currency-tooltip"><i class="fas fa-dollar-sign"></i> <span>USD <i class="fa fa-caret-down"></i> </span></div>
+                            <ul class="currency-tooltip">
+                                <li><a href="#"><i class="far fa-euro-sign"></i> EUR</a></li>
+                                <li><a href="#"><i class="far fa-pound-sign"></i> GBP</a></li>
+                                <li><a href="#"><i class="far fa-ruble-sign"></i>RUR</a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- header-top end-->
+          
+            </header>
+            <!--  header end -->
+            <!--  wrapper  -->
+            <div id="wrapper">
+                <!-- content-->
+                <div class="content">
+                    <!--section -->
+                    <section class="hero-section" data-scrollax-parent="true" id="sec1">
+                        <jcms:module:slideshow/>
+                     <!--    <div class="hero-parallax">
+                            <div class="bg"  data-bg="images/bg/2.jpg" data-scrollax="properties: { translateY: '200px' }"></div>
+                            <div class="overlay op7"></div>
+                        </div> -->
+                        <div class="hero-section-wrap fl-wrap">
+                            <div class="container">
+                                <div class="home-intro">
+                                   
+                                    <h2>Let's start exploring Nepal</h2>                                  
+                                    <h3>Book rooms with confidence</h3>
+                                </div>
+                                <div class="main-search-input-wrap">
+                                    <div class="main-search-input fl-wrap">
+                                        <div class="main-search-input-item location" id="autocomplete-container">
+                                            <span class="inpt_dec"><i class="fal fa-map-marker"></i></span>
+                                            <input type="text" placeholder="Hotel , City..." class="autocomplete-input" id="autocompleteid2"  value=""/>
+                                            <a href="#"><i class="fal fa-dot-circle"></i></a>
+                                        </div>
+                                        <div class="main-search-input-item main-date-parent main-search-input-item_small">
+                                            <span class="inpt_dec"><i class="fal fa-calendar-check"></i></span> <input type="text" placeholder="When" name="main-input-search"   value=""/>
+                                        </div>
+                                        <div class="main-search-input-item">
+                                            <div class="qty-dropdown fl-wrap">
+                                                <div class="qty-dropdown-header fl-wrap"><i class="fal fa-users"></i> Persons</div>
+                                                <div class="qty-dropdown-content fl-wrap">
+                                                    <div class="quantity-item">
+                                                        <label><i class="fas fa-male"></i> Adults</label>
+                                                        <div class="quantity">
+                                                            <input type="number" min="1" max="3" step="1" value="1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="quantity-item">
+                                                        <label><i class="fas fa-child"></i> Children</label>
+                                                        <div class="quantity">
+                                                            <input type="number" min="0" max="3" step="1" value="0">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="main-search-button color2-bg" onclick="window.location.href='#'">Search <i class="fal fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </section>
+                    <!-- section end -->
+                    <!--section -->
+                    <section id="sec2">
+                        <div class="container">
+                            <div class="section-title">
+                                
+                                <h2>Popular Destinations</h2>
+                                <p>Explore the most popular desintations of Nepal.</p>
+                            </div>
+						 </div>
+                            <!-- portfolio start -->
+                            <div class="gallery-items fl-wrap mr-bot spad home-grid">
+                                <!-- gallery-item-->
+                                <div class="gallery-item">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span>379 </span> Hotels</div>
+                                            <img  src="images/city/kathmandu.jpg"   alt="">
+                                            <div class="listing-item-cat">
+                                                <h3><a href="#">Kathmandu</a></h3>
+                                                <div class="weather-grid"   data-grcity="Rome"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Capital city. The most vibrant city of Nepal</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item ">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <img  src="images/city/pokhara.jpg"   alt="">
+                                            <div class="listing-counter"><span>243 </span> Hotels</div>
+                                            <div class="listing-item-cat">
+                                                <h3><a href="#">Pokhara</a></h3>
+                                                <div class="weather-grid"   data-grcity="Paris"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Surrounded with scenic beauty as a major destination</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item ">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span>150 </span> Hotels</div>
+                                            <img  src="images/city/chitwan.jpg"   alt="">
+                                            
+                                            <div class="listing-item-cat">
+                                                <h3><a href="#">Chitwan</a></h3>
+                                                <div class="weather-grid"   data-grcity="Paris"></div>
+                                                <div class="clearfix"></div>
+                                                <p>For wildlife and safari lovers at the Centre of Nepal</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span>46 </span> Hotels</div>
+                                            <img  src="images/city/nagarkot.jpg"   alt="">
+                                            <div class="listing-item-cat">
+                                                <h3><a href="#">Nagarkot</a></h3>
+                                                <div class="weather-grid"   data-grcity="London"></div>
+                                                <div class="clearfix"></div>
+                                                <p>The nearest hill station from Kathmandun</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span>38</span> Hotels</div>
+                                            <img  src="images/city/dhulikhel.jpg"   alt="">
+                                            <div class="listing-item-cat">
+                                                <h3><a href="#">Dhulikhel</a></h3>
+                                                <div class="weather-grid"   data-grcity="Dubai"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Mountains, Views, Activities, Temples, Hiking and More....</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                                <!-- gallery-item-->
+                                <div class="gallery-item">
+                                    <div class="grid-item-holder">
+                                        <div class="listing-item-grid">
+                                            <div class="listing-counter"><span>22</span> Hotels</div>
+                                            <img  src="images/city/nepalgunj.jpg"   alt="">
+                                            <div class="listing-item-cat">
+                                                <h3><a href="#">Nepalgunj</a></h3>
+                                                <div class="weather-grid"   data-grcity="New York"></div>
+                                                <div class="clearfix"></div>
+                                                <p>Gateway to Rara Lake. A business hub of Nepal.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- gallery-item end-->
+                            </div>
+                            <!-- portfolio end -->
+                            <a href="#" class="btn    color-bg">Explore All Cities<i class="fas fa-caret-right"></i></a>
+                    </section>
+                    <!-- section end -->
+                    <!-- section-->
+                    <section class="grey-blue-bg">
+                        <!-- container-->
+                        <div class="container">
+                            <div class="section-title">
+                                
+                                <h2>Recently Added Hotels</h2>
+                                
+                                <p>Freshly new hotels and places </p>
+                            </div>
+                        </div>
+                        <!-- container end-->
+                        <!-- carousel -->
+                        <div class="list-carousel fl-wrap card-listing ">
+                            <!--listing-carousel-->
+                            <div class="listing-carousel  fl-wrap ">
+                                <!--slick-slide-item-->
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="#"><img src="images/gal/ramada.jpg" alt=""></a>
+                                                
+                                                <div class="sale-window">Sale 20%</div>
+                                                <!-- <div class="geodir-category-opt">
+                                                    <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
+                                                    <div class="rate-class-name">
+                                                        <div class="score"><strong>Very Good</strong>27 Reviews </div>
+                                                        <span>5.0</span>                                             
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="#">Ramada Encore Kathmandu</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu</a></div>
+                                                    </div>
+                                                </div>
+                                                <p>A Comfortable Stay in Kathmandu
+                                                    Near KTM Airport, Garden of Dreams and Kathmandu Durbar Square</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <div class="geodir-category-footer fl-wrap">
+                                                    <div class="geodir-category-price"><span>$ 320</span></div>
+                                                    <div class="geodir-opt-list">
+                                                        <a href="#" class="single-map-item" data-newlatitude="40.72956781" data-newlongitude="-73.99726866"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
+                                                        <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
+                                                        <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->
+                                </div>
+                                <!--slick-slide-item end-->
+                                <!--slick-slide-item-->
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="#"><img src="images/gal/mt.jpg" alt=""></a>
+                                                
+                                                <div class="sale-window big-sale">Sale 50%</div>
+                                                
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="#">Mountain Glory Forest Resort</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i>Pokhara, Nepal</a></div>
+                                                    </div>
+                                                </div>
+                                                <p> One of the most family-friendly resorts,perfect for couples, families, weddings and events.</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <div class="geodir-category-footer fl-wrap">
+                                                    <div class="geodir-opt-link">
+                                                        <div class="geodir-category-price"><span>$ 120</span></div>
+                                                    </div>
+                                                    <div class="geodir-opt-list">
+                                                        <a href="#" class="single-map-item" data-newlatitude="40.76221766" data-newlongitude="-73.96511769"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
+                                                        <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
+                                                        <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->         
+                                </div>
+                                <!--slick-slide-item end-->
+                                <!--slick-slide-item-->
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="#"><img src="images/gal/aagantuk.jpg" alt=""></a>
+                                                
+                                                
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="#">Aagantuk Resort</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i>Dhulikhel</a></div>
+                                                    </div>
+                                                </div>
+                                                <p> It is an ideal stop-off with breathtaking views of the Eastern Himalayas at Banepa / Dhulikhel</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <div class="geodir-category-footer fl-wrap">
+                                                    <div class="geodir-opt-link">
+                                                        <div class="geodir-category-price"><span>$ 80</span></div>
+                                                    </div>
+                                                    <div class="geodir-opt-list">
+                                                        <a href="#" class="single-map-item" data-newlatitude="40.88496706" data-newlongitude="-73.88191222"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
+                                                        <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
+                                                        <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end --> 
+                                </div>
+                                <!--slick-slide-item end-->
+                                <!--slick-slide-item-->
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="#"><img src="images/gal/lumbini.jpg" alt=""></a>
+                                                
+                                                <div class="sale-window">Sale 20%</div>
+                                                
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="#">Lumbini Palace</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i> Butwal</a></div>
+                                                    </div>
+                                                </div>
+                                                <p>  In the countryside where lifestyle is still in harmony with nature and culture, it offers the best of both worlds:</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <div class="geodir-category-footer fl-wrap">
+                                                    <div class="geodir-opt-link">
+                                                        <div class="geodir-category-price"><span>$ 50</span></div>
+                                                    </div>
+                                                    <div class="geodir-opt-list">
+                                                        <a href="#" class="single-map-item" data-newlatitude="40.72228267" data-newlongitude="-73.99246214"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
+                                                        <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
+                                                        <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end --> 
+                                </div>
+                                <!--slick-slide-item end-->
+                                <!--slick-slide-item-->
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="#"><img src="images/gal/pawan.jpg" alt=""></a>
+                                                
+                                                <div class="sale-window">Sale 10%</div>
+                                                
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="#">Pawan Palace</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i>Lumbini</a></div>
+                                                    </div>
+                                                </div>
+                                                <p> Inspired from Buddhist concepts of peace and enlighten, its creates comfortable and tranquil environment for all.</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <div class="geodir-category-footer fl-wrap">
+                                                    <div class="geodir-opt-link">
+                                                        <div class="geodir-category-price"><span>$ 210</span></div>
+                                                    </div>
+                                                    <div class="geodir-opt-list">
+                                                        <a href="#" class="single-map-item" data-newlatitude="40.94982541" data-newlongitude="-73.84357452"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
+                                                        <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
+                                                        <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end -->
+                                </div>
+                                <!--slick-slide-item end-->
+                                <!--slick-slide-item-->
+                                <div class="slick-slide-item">
+                                    <!-- listing-item  -->
+                                    <div class="listing-item">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="#"><img src="images/gal/moonlight.jpg" alt=""></a>
+                                                
+                                                <div class="sale-window big-sale">Sale 70%</div>
+                                                
+                                            </div>
+                                            <div class="geodir-category-content fl-wrap title-sin_item">
+                                                <div class="geodir-category-content-title fl-wrap">
+                                                    <div class="geodir-category-content-title-item">
+                                                        <h3 class="title-sin_map"><a href="#">Moonlight Hotel</a></h3>
+                                                        <div class="geodir-category-location fl-wrap"><a href="#" class="map-item"><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu</a></div>
+                                                    </div>
+                                                </div>
+                                                <p> Choose any of our room that will exceed your expectation and give us an opportunity to serve you.</p>
+                                                <ul class="facilities-list fl-wrap">
+                                                    <li><i class="fal fa-wifi"></i><span>Free WiFi</span></li>
+                                                    <li><i class="fal fa-parking"></i><span>Parking</span></li>
+                                                    <li><i class="fal fa-smoking-ban"></i><span>Non-smoking Rooms</span></li>
+                                                    <li><i class="fal fa-utensils"></i><span> Restaurant</span></li>
+                                                </ul>
+                                                <div class="geodir-category-footer fl-wrap">
+                                                    <div class="geodir-opt-link">
+                                                        <div class="geodir-category-price"><span>$ 105</span></div>
+                                                    </div>
+                                                    <div class="geodir-opt-list">
+                                                        <a href="#" class="single-map-item" data-newlatitude="40.90261483" data-newlongitude="-74.15737152"><i class="fal fa-map-marker-alt"></i><span class="geodir-opt-tooltip">On the map</span></a>
+                                                        <a href="#" class="geodir-js-favorite"><i class="fal fa-heart"></i><span class="geodir-opt-tooltip">Save</span></a>
+                                                        <a href="#" class="geodir-js-booking"><i class="fal fa-exchange"></i><span class="geodir-opt-tooltip">Find Directions</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!-- listing-item end --> 
+                                </div>
+                                <!--slick-slide-item end-->
+                            </div>
+                            <!--listing-carousel end-->
+                            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                        </div>
+                        <!--  carousel end-->
+                    </section>
+                    <!-- section end -->
+                    <!--section -->
+                    <section class="parallax-section" data-scrollax-parent="true">
+                        <div class="bg"  data-bg="images/bg/1.jpg" data-scrollax="properties: { translateY: '100px' }"></div>
+                        <div class="overlay op7"></div>
+                        <!--container-->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="colomn-text fl-wrap pad-top-column-text_small">
+                                        <div class="colomn-text-title">
+                                            <h3>Most Popular Hotels</h3>
+                                            <p>The collection of most popular hotels of Nepal. View all that we have. Exclusive collections of hotels with us.</p>
+                                            <a href="#" class="btn  color2-bg float-btn">View All Hotels<i class="fas fa-caret-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <!--light-carousel-wrap-->
+                                    <div class="light-carousel-wrap fl-wrap">
+                                        <!--light-carousel-->
+                                        <div class="light-carousel">
+                                            <!--slick-slide-item-->
+                                            <div class="slick-slide-item">
+                                                <div class="hotel-card fl-wrap title-sin_item">
+                                                    <div class="geodir-category-img card-post">
+                                                        <a href="#"><img src="images/gal/moonlight.jpg" alt=""></a>
+                                                        <div class="listing-counter"><strong>$85</strong></div>
+                                                        <div class="sale-window">Sale 20%</div>
+                                                        <div class="geodir-category-opt">
+                                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
+                                                            <h4 class="title-sin_map"><a href="#">Moonlight Hotel</a></h4>
+                                                            <div class="geodir-category-location"><a href="#" class="single-map-item" data-newlatitude="40.90261483" data-newlongitude="-74.15737152"><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu</a></div>
+                                                            <div class="rate-class-name">
+                                                                <div class="score"><strong></strong></div>
+                                                                <span>More</span>                                             
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--slick-slide-item end-->
+                                            <!--slick-slide-item-->
+                                            <div class="slick-slide-item">
+                                                <div class="hotel-card fl-wrap title-sin_item">
+                                                    <div class="geodir-category-img">
+                                                        <a href="#"><img src="images/gal/ramada.jpg" alt=""></a>
+                                                        <div class="listing-counter"><strong>$80</strong></div>
+                                                        <div class="sale-window big-sale">Sale 50%</div>
+                                                        <div class="geodir-category-opt">
+                                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
+                                                            <h4 class="title-sin_map"><a href="#">Holiday Home</a></h4>
+                                                            <div class="geodir-category-location"><a href="#" class="single-map-item" data-newlatitude="40.72228267" data-newlongitude="-73.99246214"><i class="fas fa-map-marker-alt"></i> Kathmandu</a></div>
+                                                            <div class="rate-class-name">
+                                                                <div class="score"><strong> </strong> </div>
+                                                                <span>More</span>                                             
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--slick-slide-item end-->
+                                            <!--slick-slide-item-->
+                                            <div class="slick-slide-item">
+                                                <div class="hotel-card fl-wrap title-sin_item">
+                                                    <div class="geodir-category-img">
+                                                        <a href="#"><img src="images/gal/mm.jpg" alt=""></a>
+                                                        <div class="listing-counter"><strong>$120</strong></div>
+                                                        <div class="sale-window">Sale 10%</div>
+                                                        <div class="geodir-category-opt">
+                                                            <div class="listing-rating card-popup-rainingvis" data-starrating2="5"></div>
+                                                            <h4 class="title-sin_map"><a href="#">Hotel Mystic Mountain</a></h4>
+                                                            <div class="geodir-category-location"><a href="#" class="single-map-item" data-newlatitude="40.76221766" data-newlongitude="-73.96511769"><i class="fas fa-map-marker-alt"></i> Nagarkot, Bhaktapur</a></div>
+                                                            <div class="rate-class-name">
+                                                                <div class="score"><strong> Good</strong>31 Reviews </div>
+                                                                <span>4.9</span>                                             
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--slick-slide-item end-->                                            
+                                        </div>
+                                        <!--light-carousel end-->
+                                        <div class="fc-cont  lc-prev"><i class="fal fa-angle-left"></i></div>
+                                        <div class="fc-cont  lc-next"><i class="fal fa-angle-right"></i></div>
+                                    </div>
+                                    <!--light-carousel-wrap end-->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- section end -->
+                    <!--section -->
+                    <section>
+                        <div class="container">
+                            <div class="section-title">
+                                
+                                <h2>Why Choose Us</h2>
+                                
+                                <p>We are here to accommodate as per your need and facilitate based on your requirement.</p>
+                            </div>
+                            <!-- -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fal fa-headset"></i></div>
+                                        <h4><a href="#"> Best service guarantee</a></h4>
+                                        <p>Best price is guarantee much cheaper than ever you know. We offer best service all over Nepal. </p>
+                                    </div>
+                                    <!-- process-item end -->
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fal fa-gift"></i></div>
+                                        <h4> <a href="#">Exclusive Package</a></h4>
+                                        <p>Exclusive package around every corner within Nepal. Every kind of occasion and festival we offer.</p>
+                                    </div>
+                                    <!-- process-item end -->                                
+                                </div>
+                                <div class="col-md-4">
+                                    <!-- process-item-->
+                                    <div class="process-item big-pad-pr-item nodecpre">
+                                        <span class="process-count"> </span>
+                                        <div class="time-line-icon"><i class="fal fa-credit-card"></i></div>
+                                        <h4><a href="#"> Get more from your card</a></h4>
+                                        <p>Get more from your card. We offer online transaction through Master card with easy payment system.</p>
+                                    </div>
+                                    <!-- process-item end -->                                
+                                </div>
+                            </div>
+                            <!--process-wrap   end-->
+                            <div class=" single-facts fl-wrap mar-top">
+                                <!-- inline-facts -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-users"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="254">154</div>
+                                            </div>
+                                        </div>
+                                        <h6>Rooms booked every day</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-thumbs-up"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="12168">12168</div>
+                                            </div>
+                                        </div>
+                                        <h6>Happy customers every year</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-award"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="172">172</div>
+                                            </div>
+                                        </div>
+                                        <h6>Won Awards</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                                <!-- inline-facts  -->
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <i class="fal fa-hotel"></i>
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="732">732</div>
+                                            </div>
+                                        </div>
+                                        <h6>New Listing Every Week</h6>
+                                    </div>
+                                </div>
+                                <!-- inline-facts end -->
+                            </div>
+                        </div>
+                    </section>
+                    <!-- section end -->
+                    
+                    <!--section -->
+                    <section class="color-bg hidden-section">
+                        <div class="wave-bg wave-bg2"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- -->
+                                    <div class="colomn-text  pad-top-column-text fl-wrap">
+                                        <div class="colomn-text-title">
+                                            <h3>Our App  is COMING SOON</h3>
+                                            <p>Our app is launching soon for Android Play Store and Apple Store. Please check this section for new updates in terms of app. An extensive app which allows to book and confirm reservations via app. </p>
+                                            <a href="#" class=" down-btn color3-bg"><i class="fab fa-apple"></i> Coming Soon</a>
+                                            <a href="#" class=" down-btn color3-bg"><i class="fab fa-android"></i> Coming Soon</a>
+                                        </div>
+                                    </div>
+                                    <!--process-wrap   end-->                                
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="collage-image">
+                                        <img src="images/api.png" class="main-collage-image" alt="">
+                                        <div class="images-collage-title color3-bg">Gundri<span> Booking</span></div>
+                                        <div class="collage-image-min cim_1"><img src="images/api/2.jpg" alt=""></div>
+                                        <div class="collage-image-min cim_2"><img src="images/api/1.jpg" alt=""></div>
+                                        <div class="collage-image-min cim_3"><img src="images/api/3.jpg" alt=""></div>
+                                        
+                                        <div class="collage-image-btn color2-bg">Coming Soon</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <jcms:module:testimonialHome/>
+                    <!-- via and link rakna thau banouna ho-->
+                    <!-- section end -->
+                    <!--section -->
+                    <!-- <section>
+                        <div class="container">
+                            <div class="section-title">
+                                <div class="section-title-separator"><span></span></div>
+                                <h2>Testimonials</h2>
+                                <span class="section-separator"></span>
+                                <p>We are happy that our users are happy. Few happiness as shared by our valued users.</p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div> -->
+                        <!--slider-carousel-wrap -->
+                       <!--  <div class="slider-carousel-wrap text-carousel-wrap fl-wrap">
+                            <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                            <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                            <div class="text-carousel single-carousel fl-wrap">-->
+                                <!--slick-item -->
+                                <!--<div class="slick-item">
+                                    <div class="text-carousel-item">
+                                        <div class="popup-avatar"><img src="images/avatar/2.jpg" alt=""></div>
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                                        <p> "I booked through them for my daughter last bday a 4day trip. We were able to experience our life time memory with gundri.com. Hotel welcomed us like king when we arrived and the stay was awesome experience. The call from gundri.com representative made us feel special during our stay."</p>
+                                        <a href="#" class="testim-link">Via Instagram</a>
+                                    </div>
+                                </div> -->
+                                <!--slick-item end -->
+                                <!--slick-item -->
+                                <!-- <div class="slick-item">
+                                    <div class="text-carousel-item">
+                                        <div class="popup-avatar"><img src="images/avatar/3.jpg" alt=""></div>
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="4"> </div>
+                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                                        <p> I booked through them for my daughter last bday a 4day trip. We were able to experience our life time memory with gundri.com. Hotel welcomed us like king when we arrived and the stay was awesome experience. The call from gundri.com representative made us feel special during our stay."</p>
+                                        <a href="#" class="testim-link">Via Google</a>
+                                    </div>
+                                </div> -->
+                                <!--slick-item end -->
+                                <!--slick-item -->
+                                <!-- <div class="slick-item">
+                                    <div class="text-carousel-item">
+                                        <div class="popup-avatar"><img src="images/avatar/1.jpg" alt=""></div>
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                                        <p> "I booked through them for my daughter last bday a 4day trip. We were able to experience our life time memory with gundri.com. Hotel welcomed us like king when we arrived and the stay was awesome experience. The call from gundri.com representative made us feel special during our stay."</p>
+                                        <a href="#" class="testim-link">Via Facebook</a>
+                                    </div>
+                                </div> -->
+                                <!--slick-item end -->
+                                <!--slick-item -->
+                                <!-- <div class="slick-item">
+                                    <div class="text-carousel-item">
+                                        <div class="popup-avatar"><img src="images/avatar/3.jpg" alt=""></div>
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5"> </div>
+                                        <div class="review-owner fl-wrap">Milka Antony  - <span>Happy Client</span></div>
+                                        <p> "I booked through them for my daughter last bday a 4day trip. We were able to experience our life time memory with gundri.com. Hotel welcomed us like king when we arrived and the stay was awesome experience. The call from gundri.com representative made us feel special during our stay."</p>
+                                        <a href="#" class="testim-link">Via Google</a>
+                                    </div>
+                                </div> -->
+                                <!--slick-item end -->
+                            <!-- </div>
+                        </div> -->
+                        <!--slider-carousel-wrap end-->
+                   <!--  </section> -->
+                    <!-- section end-->
+                   
+                    <section class="parallax-section" data-scrollax-parent="true">
+                        <div class="bg"  data-bg="images/bg/rama.jpg" data-scrollax="properties: { translateY: '100px' }"></div>
+                        <div class="overlay"></div>
+                        <!--container-->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <!-- column text-->
+                                    <div class="colomn-text fl-wrap">
+                                        <div class="colomn-text-title">
+                                            <h3>The owner of the hotel?</h3>
+                                            <p>List your hotel with us to attract guests who has never been in your reach.</p>
+                                            <a href="dashboard-add-#" class="btn  color-bg float-btn">Add your hotel<i class="fal fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--column text   end-->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- section end -->
+                    <!--section -->                       
+                    <section class=" middle-padding">
+                        <div class="container">
+                            <div class="section-title">
+                                
+                                <h2>Blogs</h2>
+                                
+                                <p>Browse the latest articles from our blog.</p>
+                            </div>
+                            <div class="row home-posts">
+                                <div class="col-md-4">
+                                    <article class="card-post">
+                                        <div class="card-post-img fl-wrap">
+                                            <a href="#"><img  src="images/all/npl.jpg"   alt=""></a>
+                                        </div>
+                                        <div class="card-post-content fl-wrap">
+                                            <h3><a href="#">Travel after pandemic in Nepal</a></h3>
+                                            <p>After a year of pandemic, Nepal is suffering from economic crisis. Less number of peoples are infected and is in control.</p>
+                                            
+                                            <div class="post-opt">
+                                                <ul>
+                                                    <li><i class="fal fa-calendar"></i> <span>25 April 2021</span></li>
+                                                    
+                                                    <li><i class="fal fa-tags"></i> <a href="#">Tourism</a>  </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-md-4">
+                                    <article class="card-post">
+                                        <div class="card-post-img fl-wrap">
+                                            <div class="list-single-main-media fl-wrap">
+                                                <div class="single-slider-wrapper fl-wrap">
+                                                    <div class="single-slider fl-wrap"  >
+                                                        <div class="slick-slide-item"><img src="images/all/ann.jpg" alt=""></div>
+                                                        <div class="slick-slide-item"><img src="images/all/ann.jpg" alt=""></div>
+                                                        <div class="slick-slide-item"><img src="images/all/ann.jpg" alt=""></div>
+                                                    </div>
+                                                    <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                                                    <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-post-content fl-wrap">
+                                            <h3><a href="#">Reviving Tourism Sectors</a></h3>
+                                            <p>We are resuming our tourism sector with safety measures included in all over the place. We offer special care for our guest </p>
+                                            
+                                            <div class="post-opt">
+                                                <ul>
+                                                    <li><i class="fal fa-calendar"></i> <span>25 April 2021</span></li>
+                                                    
+                                                    <li><i class="fal fa-tags"></i> <a href="#">Travel</a>  </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-md-4">
+                                    <article class="card-post">
+                                        <div class="card-post-img fl-wrap">
+                                            <a href="#"><img  src="images/all/bud.jpg"   alt=""></a>
+                                        </div>
+                                        <div class="card-post-content fl-wrap">
+                                            <h3><a href="#">COVID Vaccination Program</a></h3>
+                                            <p>We are resuming our tourism sector with safety measures included in all over the place. We offer special care for our guest </p>
+                                            
+                                            <div class="post-opt">
+                                                <ul>
+                                                    <li><i class="fal fa-calendar"></i> <span>25 April 2021</span></li>
+                                                    
+                                                    <li><i class="fal fa-tags"></i> <a href="#">Hospitality</a>  </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <a href="#" class="btn    color-bg ">Read All News<i class="fas fa-caret-right"></i></a>
+                        </div>
+                        <div class="section-decor"></div>
+                    </section>
+                </div>
+                <!-- content end-->
+            </div>
+            <!--wrapper end -->
+            <!--footer -->
+            <footer class="main-footer">
+                <!--footer-inner-->
+                <div class="footer-inner">
+                    <div class="container">
+                        <!--footer-fw-widget-->
+                        <div class="footer-fw-widget hidden fl-wrap">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="footer-carousel-title">
+                                        Our partners
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <!--footer-carousel-wrap-->
+                                    <div class="footer-carousel-wrap fl-wrap">
+                                        <div class="footer-carousel fl-wrap">
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="images/partners/1.png" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="images/partners/1.png" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->                             
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="images/partners/1.png" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="images/partners/1.png" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->      
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="images/partners/1.png" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->
+                                            <!--footer-carousel-item-->
+                                            <div class="footer-carousel-item">
+                                                <a href="#"><img src="images/partners/1.png" alt=""></a>
+                                            </div>
+                                            <!--footer-carousel-item end-->                                     
+                                        </div>
+                                        <div class="fc-cont  fc-cont-prev"><i class="fal fa-angle-left"></i></div>
+                                        <div class="fc-cont  fc-cont-next"><i class="fal fa-angle-right"></i></div>
+                                    </div>
+                                    <!--footer-carousel-wrap end-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--footer-fw-widget end-->
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <p> Whoever you are, whatever you're looking for, we have the perfect place for you. Our 8,424 listings include 6,535 listings of homes, apartments, and other unique places to stay, and are located in 3,889 destinations. Gundri Booking is based in Nepal, is supported internationally  in 14 countries.</p>
+                                <br><br><br>
+                            </div>
+                            <!--footer-widget -->
+                            <div class="col-md-4">
+                                <div class="footer-widget fl-wrap">
+                                    
+                                    <div class="footer-contacts-widget fl-wrap">
+                                       
+                                        <ul  class="footer-contacts fl-wrap">
+                                            <li><span><i class="fal fa-envelope"></i> Mail :</span><a href="#" target="_blank">info@gundri.com</a></li>
+                                            <li> <span><i class="fal fa-map-marker-alt"></i> Adress :</span><a href="#" target="_blank">Hattisaar, kathmandu, Nepal</a></li>
+                                            <li><span><i class="fal fa-phone"></i> Phone :</span><a href="#">+977 9801055718</a></li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!--footer-widget end-->
+                            <!--footer-widget -->
+                            <div class="col-md-4">
+                                <div class="footer-widget fl-wrap">
+                                    <div class="footer-social">
+                                        <span>Find us : </span>
+                                        <ul>
+                                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <a class="contact-btn color-bg" href="#">Get In Touch<i class="fal fa-envelope"></i></a>
+                                </div>
+                            </div>
+                            <!--footer-widget end-->
+                            <!--footer-widget -->
+                            <div class="col-md-4">
+                                <div class="customer-support-widget fl-wrap">
+                                    <h4>Customer support : </h4>
+                                    <a href="tel:+9779801055718" class="cs-mumber">+977 9801055718</a>
+                                    <a href="tel:+9779801055718" class="cs-mumber-button color2-bg">Call Now <i class="far fa-phone-volume"></i></a>
+                                </div>
+                              
+                            </div>
+                            <!--footer-widget end-->
+                            
+                        </div>
+                        <div class="clearfix"></div>
+                        
+                    </div>
+                </div>
+                <!--footer-inner end -->
+                <div class="footer-bg">
+                </div>
+                <!--sub-footer-->
+                <div class="sub-footer">
+                    <div class="container">
+                        <div class="copyright"> &#169; Gundri Booking 2021 .  All rights reserved.</div>
+                        
+                        <div class="subfooter-nav">
+                            <ul>
+                                <li><a href="#">Terms of use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--sub-footer end -->
+            </footer>
+            <!--footer end -->
+            <!--map-modal -->
+            <div class="map-modal-wrap">
+                <div class="map-modal-wrap-overlay"></div>
+                <div class="map-modal-item">
+                    <div class="map-modal-container fl-wrap">
+                        <div class="map-modal fl-wrap">
+                            <div id="singleMap" data-latitude="40.7" data-longitude="-73.1"></div>
+                        </div>
+                        <h3><i class="fal fa-location-arrow"></i><a href="#">Hotel Title</a></h3>
+                        <input id="pac-input" class="controls fl-wrap controls-mapwn" type="text" placeholder="What Nearby ?   Bar , Gym , Restaurant ">
+                        <div class="map-modal-close"><i class="fal fa-times"></i></div>
+                    </div>
+                </div>
+            </div>
+            <!--map-modal end -->            
+            <!--register form -->
+            <div class="main-register-wrap modal">
+                <div class="reg-overlay"></div>
+                <div class="main-register-holder">
+                    <div class="main-register fl-wrap">
+                        <div class="close-reg color-bg"><i class="fal fa-times"></i></div>
+                        <ul class="tabs-menu">
+                            <li class="current"><a href="#tab-1"><i class="fal fa-sign-in-alt"></i> Login</a></li>
+                            <li><a href="#tab-2"><i class="fal fa-user-plus"></i> Register</a></li>
+                        </ul>
+                        <!--tabs -->                       
+                        <div id="tabs-container">
+                            <div class="tab">
+                                <!--tab -->
+                                <div id="tab-1" class="tab-content">
+                                    <h3>Sign In <span>Easy<strong>Book</strong></span></h3>
+                                    <div class="custom-form">
+                                        <form method="post"  name="registerform">
+                                            <label>Username or Email Address <span>*</span> </label>
+                                            <input name="email" type="text"   onClick="this.select()" value="">
+                                            <label >Password <span>*</span> </label>
+                                            <input name="password" type="password"   onClick="this.select()" value="" >
+                                            <button type="submit"  class="log-submit-btn color-bg"><span>Log In</span></button>
+                                            <div class="clearfix"></div>
+                                            <div class="filter-tags">
+                                                <input id="check-a" type="checkbox" name="check">
+                                                <label for="check-a">Remember me</label>
+                                            </div>
+                                        </form>
+                                        <div class="lost_password">
+                                            <a href="#">Lost Your Password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--tab end -->
+                                <!--tab -->
+                                <div class="tab">
+                                    <div id="tab-2" class="tab-content">
+                                        <h3>Sign Up <span>Easy<strong>Book</strong></span></h3>
+                                        <div class="custom-form">
+                                            <form method="post"   name="registerform" class="main-register-form" id="main-register-form2">
+                                                <label >Full Name <span>*</span> </label>
+                                                <input name="name" type="text"   onClick="this.select()" value="">
+                                                <label>Email Address <span>*</span></label>
+                                                <input name="email" type="text"  onClick="this.select()" value="">
+                                                <label >Password <span>*</span></label>
+                                                <input name="password" type="password"   onClick="this.select()" value="" >
+                                                <button type="submit"     class="log-submit-btn color-bg"  ><span>Register</span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--tab end -->
+                            </div>
+                            <!--tabs end -->
+                            <div class="log-separator fl-wrap"><span>or</span></div>
+                            <div class="soc-log fl-wrap">
+                                <p>For faster login or register use your social account.</p>
+                                <a href="#" class="facebook-log"><i class="fab fa-facebook-f"></i>Connect with Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--register form end -->
+            <a class="to-top"><i class="fas fa-caret-up"></i></a>
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script> 
+        <script type="text/javascript" src="js/map-single.js"></script>         
+    </body>
+</html>

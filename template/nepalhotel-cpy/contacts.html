@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+
+    <!--=============== css  ===============-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
+    <!--=============== favicons ===============-->
+    <!--  <link rel="shortcut icon" href="images/favicon.ico"> -->
+</head>
+
+<body>
+<!--loader-->
+<div class="loader-wrap">
+    <div class="pin">
+        <div class="pulse"></div>
+    </div>
+</div>
+<!--loader end-->
+
+<!-- Main  -->
+<div id="main">
+    <!-- header-->
+    <header class="main-header">
+        <!-- header-top-->
+        <div class="header-top fl-wrap">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="logo-holder">
+                        <jcms:module:logo/>
+                        <!--  <a href="index.html"><img src="images/logo.png" alt=""></a> -->
+                    </div>
+                    <div class="greeting">
+                        <a href="<jcms:site:base_url/>listproperty" class="btn btn-outline-light btn-sm d-inline-block">List your property</a>
+                        <jcms:module:subscribers:login-welcome/>
+                    </div>
+                </div>
+                <div class="nav-holder main-menu">
+                    <nav>
+                        <jcms:module:menu/>
+                    </nav>
+                </div>
+                <!-- <a href="dashboard-add-#" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>
+                <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div> -->
+                <!-- <div class="lang-wrap">
+                    <div class="show-lang"><img src="images/lan/1.png" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
+                    <ul class="lang-tooltip green-bg">
+                        <li><a href="#"><img src="images/lan/4.png" alt=""> De</a></li>
+                        <li><a href="#"><img src="images/lan/5.png" alt=""> It</a></li>
+                        <li><a href="#"><img src="images/lan/2.png" alt=""> Fr</a></li>
+                        <li><a href="#"><img src="images/lan/3.png" alt=""> Es</a></li>
+                    </ul>
+                </div> -->
+                <!-- <div class="currency-wrap">
+                    <div class="show-currency-tooltip"><i class="fas fa-dollar-sign"></i> <span>USD <i class="fa fa-caret-down"></i> </span></div>
+                    <ul class="currency-tooltip">
+                        <li><a href="#"><i class="far fa-euro-sign"></i> EUR</a></li>
+                        <li><a href="#"><i class="far fa-pound-sign"></i> GBP</a></li>
+                        <li><a href="#"><i class="far fa-ruble-sign"></i>RUR</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <!-- header-top end-->
+    </header>
+    <!--  header end -->
+
+    <!--  wrapper  -->
+    <div id="wrapper">
+        <!-- content-->
+        <div class="content">
+            <!-- map-view-wrap -->
+            <div class="map-view-wrap">
+                <div class="container">
+                    <div class="map-view-wrap_item">
+                        <div class="list-single-main-item-title fl-wrap">
+                            <h3>Contacts</h3>
+                        </div>
+                        <jcms:module:contactsinfo/>
+                        <jcms:module:sociaLink/>
+                        <!--  <div class="box-widget-list mar-top">
+                             <ul>
+                                 <li><span><i class="fal fa-map-marker"></i> Adress :</span> <a href="#">Hattisaar, kathmandu, Nepal</a></li>
+                                 <li><span><i class="fal fa-phone"></i> Phone :</span> <a href="tel:+977 9801055718">+977 9801055718</a></li>
+                                 <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="mailto:info@gundri.com">info@gundri.com</a></li>
+                             </ul>
+                         </div> -->
+                        <!-- <div class="list-widget-social">
+                            <ul>
+                                <li><a target="_blank" href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a target="_blank" href="instagram.com"><i class="fab fa-instagram"></i></a></li>
+                                <li><a target="_blank" href="linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a target="_blank" href="youtube.com"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!--map-view-wrap end -->
+
+            <!-- Map -->
+            <div class="map-container fw-map2">
+                <jcms:module:officeLocation/>
+                <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7064.363972225323!2d85.32080757536022!3d27.71166683116015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190f4a0b4909%3A0xb643c83319112328!2sHattisar%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1613024362004!5m2!1sen!2snp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
+            </div>
+            <!-- Map end -->
+            <jcms:module:contactbreadcum/>
+            <!--  <div class="breadcrumbs-fs fl-wrap">
+                 <div class="container">
+                     <div class="breadcrumbs fl-wrap"><a href="#">Home</a><a href="#">Pages</a><span>Contacts</span></div>
+                 </div>
+             </div> -->
+            <jcms:module:contactus/>
+            <!--   <section  id="sec1" class="grey-b lue-bg middle-padding">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-offset-2 col-md-8">
+                              <div class="list-single-main-item fl-wrap">
+                                  <div class="list-single-main-item-title fl-wrap">
+                                      <h3>Get In Touch</h3>
+                                  </div>
+                                  <div id="contact-form">
+                                      <div id="message"></div>
+                                      <form  class="custom-form" action="php/contact.php" name="contactform" id="contactform">
+                                          <fieldset>
+                                              <label><i class="fal fa-user"></i></label>
+                                              <input type="text" name="name" id="name" placeholder="Your Name *" value=""/>
+                                              <div class="clearfix"></div>
+                                              <label><i class="fal fa-envelope"></i>  </label>
+                                              <input type="text"  name="email" id="email" placeholder="Email Address*" value=""/>
+
+                                              <textarea name="comments"  id="comments" cols="40" rows="3" placeholder="Your Message:"></textarea>
+                                          </fieldset>
+                                          <button class="btn float-btn color2-bg" style="margin-top:15px;" id="submit">Send Message<i class="fal fa-angle-right"></i></button>
+                                      </form>
+                                  </div> -->
+            <!-- contact form  end-->
+            <!--      </div>
+             </div>
+         </div>
+     </div>
+
+     <div class="section-decor"></div>
+ </section>
+</div> -->
+            <!-- content end-->
+        </div>
+    </div>
+    <!--wrapper end -->
+
+    <footer class="main-footer">
+        <!--footer-inner-->
+        <div class="footer-inner">
+            <div class="container">
+                <!--footer-fw-widget-->
+
+                <!--footer-fw-widget end-->
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p>
+                            <jcms:module:footerBrief/>
+                        </p>
+                        <br><br><br>
+                    </div>
+                    <!--footer-widget -->
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+
+                            <div class="footer-contacts-widget fl-wrap">
+                                <jcms:module:footer-contactinfo/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <jcms:module:socialbottom/>
+
+                    <div class="col-md-4">
+
+                        <jcms:module:customersupport/>
+
+                    </div>
+                    <!--footer-widget end-->
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+        <!--footer-inner end -->
+        <div class="footer-bg">
+        </div>
+        <!--sub-footer-->
+        <div class="sub-footer">
+            <div class="container">
+
+                <div class="copyright">
+                    <jcms:site:copyright/>
+                </div>
+
+                <div class="subfooter-nav">
+                    <jcms:module:footer-menu/>
+
+                </div>
+            </div>
+        </div>
+        <!--sub-footer end -->
+    </footer>
+
+    <!--register form -->
+    <jcms:module:subscribers:login-register-form/>
+    <!--register form end -->
+    <a class="to-top"><i class="fas fa-caret-up"></i></a>
+</div>
+<!-- Main end -->
+
+<!--=============== scripts  ===============-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script>
+<script type="text/javascript" src="js/map-single.js"></script>
+
+<!-- Specifi scripts -->
+<script src="js/functions.js"></script>
+<script type="text/javascript">
+    var base_url = jQuery('base').attr('url');
+    jQuery(document).ready(function () {
+        jQuery('#contactform').validate({
+            errorElement: 'span',
+            errorClass: 'validate-has-error',
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+
+
+                email: {
+                    required: true,
+                    email: true
+                },
+
+
+                comments: {
+                    required: true
+                }
+
+            },
+            messages: {
+                name: {
+                    required: "This field is required. Please enter your  Name",
+                    minlength: "Your name must consist of at least 2 characters"
+                },
+
+
+                email: {
+                    required: "This field is required.Please enter your  email</br>",
+                    email: "Enter Correct Email "
+                },
+
+
+                comments: {
+                    required: "Enter your message"
+                }
+
+            },
+            submitHandler: function (form) {
+                var Frmval = jQuery("form#contactform").serialize();
+                jQuery("button#submit").attr("disabled", "true").text('Processing...');
+                jQuery.ajax({
+                    type: "POST",
+                    dataType: "JSON",
+                    url: base_url + "enquery_mail.php",
+                    data: "action=forcoment&" + Frmval,
+                    success: function (data) {
+                        var msg = eval(data);
+                        jQuery("button#submit").removeAttr("disabled").text('Submit');
+                        // alert(msg.message);
+                        jQuery('div#msg').html(msg.message).css('display', 'block').fadeOut(10000);
+                        jQuery("form#contactform")[0].reset();
+                        /*setTimeout(function () {
+                            window.location.reload();
+                        }, 8000);*/
+                    }
+                });
+                return false;
+            }
+        })
+
+    });
+
+</script>
+</body>
+</html>

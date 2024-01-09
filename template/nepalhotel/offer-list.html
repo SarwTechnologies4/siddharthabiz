@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+<head>
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!--Default CSS-->
+    <link rel="stylesheet" href="css/default.css" type="text/css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!--Plugin CSS-->
+    <link rel="stylesheet" href="css/plugin.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    
+    <!--Font Awesome-->
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <jcms:module:header/>
+        
+    <!-- breadcrumbs starts -->
+    <section class="breadcrumb-outer offer-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <h1 class="text-white">Offers</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="single">
+        <jcms:module:offer-list/>
+    </section>
+
+    <!-- Gallery starts -->
+    <section class="content-add">
+        <div class="container-xxl px-md-5 px-4">
+            <div class="add-text">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img src="images/app.jpeg" alt="app">
+                    </div>
+                </div>
+                <div class="row d-none">
+                    <div class="col-lg-11">
+                        <h4 class="m-0">Unlock extraordinary experiences with the Siddhartha Hospitality app.</h4>
+                        <p class="m-0"><small>Wherever you go, the app gives you easy access to everything you need for your trip.</small></p>
+                    </div>
+
+                    <div class="col-lg-1 d-flex align-items-center justify-content-end">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Ends -->
+
+
+    <!-- logos Starts -->
+    <jcms:module:footer-booking/>
+    <!-- Footer Ends -->
+    <jcms:module:subscribers:login-register-form/>
+    <!-- Back to top start -->
+    <div id="back-to-top">
+        <a href="#"></a>
+    </div>
+    <!-- Back to top ends -->
+
+    <!-- *Scripts* -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/custom-nav.js"></script>
+    <script src="js/custom-swiper2.js"></script>
+    <script src="js/custom-singledate.js"></script>
+    <script>
+        $(function() {
+        
+        
+        $("#signinn").on("click", function() {
+          $("#home-tab").click();
+        });
+      });
+    </script>
+    <script>
+        $(function(){
+            
+        })
+    </script>
+</body>
+</html>

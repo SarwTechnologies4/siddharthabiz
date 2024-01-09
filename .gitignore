@@ -1,0 +1,13 @@
+/.env
+/.idea
+/_private
+/_pvt
+.DS_Store
+
+includes/config.php
+includes/initialize.php
+
+/images
+userfiles
+
+*.zip

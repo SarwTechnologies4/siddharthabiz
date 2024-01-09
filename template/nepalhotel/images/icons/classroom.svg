@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="5" width="10" height="5" fill="#E7C75E"/>
+<circle cx="5.875" cy="12.875" r="1.875" transform="rotate(-90 5.875 12.875)" fill="#E7C75E"/>
+<circle cx="11.875" cy="12.875" r="1.875" transform="rotate(-90 11.875 12.875)" fill="#E7C75E"/>
+<rect x="4" y="17" width="10" height="5" fill="#E7C75E"/>
+<circle cx="5.875" cy="24.875" r="1.875" transform="rotate(-90 5.875 24.875)" fill="#E7C75E"/>
+<circle cx="11.875" cy="24.875" r="1.875" transform="rotate(-90 11.875 24.875)" fill="#E7C75E"/>
+<rect x="18" y="5" width="10" height="5" fill="#E7C75E"/>
+<circle cx="19.875" cy="12.875" r="1.875" transform="rotate(-90 19.875 12.875)" fill="#E7C75E"/>
+<circle cx="25.875" cy="12.875" r="1.875" transform="rotate(-90 25.875 12.875)" fill="#E7C75E"/>
+<rect x="18" y="17" width="10" height="5" fill="#E7C75E"/>
+<circle cx="19.875" cy="24.875" r="1.875" transform="rotate(-90 19.875 24.875)" fill="#E7C75E"/>
+<circle cx="25.875" cy="24.875" r="1.875" transform="rotate(-90 25.875 24.875)" fill="#E7C75E"/>
+</svg>

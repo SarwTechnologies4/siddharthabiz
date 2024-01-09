@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <jcms:site:fevicon/>
+    <jcms:site:seotitle/>
+
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--=============== css  ===============-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <!--=============== favicons ===============-->
+    <!--  <link rel="shortcut icon" href="images/favicon.ico"> -->
+</head>
+
+<body>
+
+<!--loader-->
+<div class="loader-wrap">
+    <div class="pin">
+        <div class="pulse"></div>
+    </div>
+</div>
+<!--loader end-->
+
+<!-- Main  -->
+<div id="main">
+    <!-- header-->
+    <header class="main-header">
+        <!-- header-top-->
+        <div class="header-top fl-wrap">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div class="logo-holder">
+                        <jcms:module:logo/>
+                        <!--  <a href="index.html"><img src="images/logo.png" alt=""></a> -->
+                    </div>
+                    <div class="greeting">
+                        <a href="<jcms:site:base_url/>listproperty" class="btn btn-outline-light btn-sm d-inline-block">List your property</a>
+                        <jcms:module:subscribers:login-welcome/>
+                    </div>
+                </div>
+                <div class="nav-holder main-menu">
+                    <nav>
+                        <jcms:module:menu/>
+                    </nav>
+                </div>
+                <!-- <a href="dashboard-add-#" class="add-hotel">Add Your Hotel <span><i class="far fa-plus"></i></span></a>
+                <div class="show-reg-form modal-open"><i class="fa fa-sign-in"></i>Sign In</div> -->
+                <!-- <div class="lang-wrap">
+                    <div class="show-lang"><img src="images/lan/1.png" alt=""> <span>Eng</span><i class="fa fa-caret-down"></i></div>
+                    <ul class="lang-tooltip green-bg">
+                        <li><a href="#"><img src="images/lan/4.png" alt=""> De</a></li>
+                        <li><a href="#"><img src="images/lan/5.png" alt=""> It</a></li>
+                        <li><a href="#"><img src="images/lan/2.png" alt=""> Fr</a></li>
+                        <li><a href="#"><img src="images/lan/3.png" alt=""> Es</a></li>
+                    </ul>
+                </div> -->
+                <!-- <div class="currency-wrap">
+                    <div class="show-currency-tooltip"><i class="fas fa-dollar-sign"></i> <span>USD <i class="fa fa-caret-down"></i> </span></div>
+                    <ul class="currency-tooltip">
+                        <li><a href="#"><i class="far fa-euro-sign"></i> EUR</a></li>
+                        <li><a href="#"><i class="far fa-pound-sign"></i> GBP</a></li>
+                        <li><a href="#"><i class="far fa-ruble-sign"></i>RUR</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <!-- header-top end-->
+    </header>
+    <!--  header end -->
+
+    <!--  wrapper  -->
+    <div id="wrapper">
+        <!-- content-->
+        <div class="content">
+            <section class="middle-padding grey-blue-bg booking">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="fs-4 mb-4">Your Booking Details</h1>
+                        </div>
+                        <div class="col-md-8 col-xs-12 booking-box text-start">
+                            <jcms:module:book:form/>
+                        </div>
+                        <div class="col-md-4 col-xs-12 text-start">
+                            <div class="booking-sidebar">
+                                <jcms:module:book:sidebar/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content end-->
+        <div class="limit-box fl-wrap"></div>
+    </div>
+    <!--wrapper end -->
+
+    <!--footer -->
+    <footer class="main-footer">
+        <!--footer-inner-->
+        <div class="footer-inner">
+            <div class="container">
+                <!--footer-fw-widget-->
+
+                <!--footer-fw-widget end-->
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p>
+                            <jcms:module:footerBrief/>
+                        </p>
+                        <br><br><br>
+                    </div>
+                    <!--footer-widget -->
+                    <div class="col-md-4">
+                        <div class="footer-widget fl-wrap">
+
+                            <div class="footer-contacts-widget fl-wrap">
+                                <jcms:module:footer-contactinfo/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <jcms:module:socialbottom/>
+
+                    <div class="col-md-4">
+
+                        <jcms:module:customersupport/>
+
+                    </div>
+                    <!--footer-widget end-->
+
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+        <!--footer-inner end -->
+        <div class="footer-bg">
+        </div>
+        <!--sub-footer-->
+        <div class="sub-footer">
+            <div class="container">
+
+                <div class="copyright">
+                    <jcms:site:copyright/>
+                </div>
+
+                <div class="subfooter-nav">
+                    <jcms:module:footer-menu/>
+
+                </div>
+            </div>
+        </div>
+        <!--sub-footer end -->
+    </footer>
+
+    <!--register form -->
+    <jcms:module:subscribers:login-register-form/>
+    <!--register form end -->
+    <a class="to-top"><i class="fas fa-caret-up"></i></a>
+</div>
+<!-- Main End -->
+
+<!--=============== scripts  ===============-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEYHERE&libraries=places&callback=initAutocomplete"></script>
+<script type="text/javascript" src="js/map-single.js"></script>-->
+
+<script>
+    $(function () {
+        var base_url = $('base').attr('url');
+        if ($('#booking_form')[0]) {
+
+            $('#booking_form').validate({
+                errorElement: 'span',
+                errorClass: 'validate-has-error',
+                rules: {
+                    fname: {
+                        required: true
+                    },
+                    lname: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    phone: {
+                        required: true
+                    },
+                    country: {
+                        required: true
+                    },
+                    city: {
+                        required: true
+                    }
+                },
+                messages: {
+                    fname: {
+                        required: "Please enter your First Name."
+                    },
+                    lname: {
+                        required: "Please enter your Last Name."
+                    },
+                    email: {
+                        required: "Please enter your Email Address.",
+                        email: "Enter Correct Email!"
+                    },
+                    phone: {
+                        required: "Please enter your Phone Number."
+                    },
+                    country: {
+                        required: "Please select your Country."
+                    },
+                    city: {
+                        required: "Please enter your City."
+                    }
+                },
+                submitHandler: function (form) {
+                    var Frmval = $("form#booking_form").serialize();
+                    $("button#submit").attr("disabled", "true").text('Processing...');
+                    var queryString = 'action=hbl_pay&' + Frmval;
+                    jQuery.ajax({
+                        type: "POST",
+                        dataType: "JSON",
+                        url: base_url + 'includes/controllers/ajax.bookinginfo.php',
+                        data: queryString,
+                        success: function (data) {
+                            var msg = eval(data);
+                            if (msg.action == 'success') {
+                                $("button#submit").removeAttr("disabled").text('Book Now');
+                                $('div#msg').removeClass("alert alert-danger mt-3").addClass("alert alert-success mt-3").html(msg.message).css('display', 'block').fadeOut(10000);
+
+                                // $(".empty-div").html(msg.payment_content);
+                                $("form#booking_form")[0].reset();
+                                // setTimeout(function () {
+                                //     return window.location.href = base_url + "dashboard";
+                                // }, 6000);
+                            }
+                            if (msg.action == 'error') {
+                                $("button#submit").removeAttr("disabled").text('Book Now');
+                                $('div#msg').removeClass("alert alert-success mt-3").addClass("alert alert-danger mt-3").html(msg.message).css('display', 'block').fadeOut(10000);
+                            }
+                        }
+                    });
+                    return false;
+                }
+            })
+        }
+    })
+</script>
+
+<script>
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /*look for any elements with the class "custom-select":*/
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        /*for each element, create a new DIV that will act as the selected item:*/
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+        /*for each element, create a new DIV that will contain the option list:*/
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < ll; j++) {
+            /*for each option in the original select element,
+            create a new DIV that will act as an option item:*/
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function (e) {
+                /*when an item is clicked, update the original select box,
+                and the selected item:*/
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+                        h.innerHTML = this.innerHTML;
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        yl = y.length;
+                        for (k = 0; k < yl; k++) {
+                            y[k].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "same-as-selected");
+                        break;
+                    }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function (e) {
+            /*when the select box is clicked, close any other select boxes,
+            and open/close the current select box:*/
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+        });
+    }
+
+    function closeAllSelect(elmnt) {
+        /*a function that will close all select boxes in the document,
+        except the current select box:*/
+        var x, y, i, xl, yl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+                arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+        for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+
+    /*if the user clicks anywhere outside the select box,
+    then close all select boxes:*/
+    document.addEventListener("click", closeAllSelect);
+</script>
+
+</body>
+</html>

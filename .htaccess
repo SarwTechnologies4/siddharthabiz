@@ -1,0 +1,114 @@
+RewriteOptions inherit
+RewriteEngine On
+
+<FilesMatch "\.(css|php)$">
+  <IfModule mod_headers.c>
+       #Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
+
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+#For home page. i.e. index.php
+RewriteRule ^home$ index.php [L]
+
+#For property user registration.
+RewriteRule ^listproperty/?$ listproperty.php [L]
+
+#For User password reset
+RewriteRule ^reset-password/([a-zA-Z0-9-]+)?$ reset-password.php?access_code=$1 [L]
+RewriteRule ^verify-email/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)?$ verify-email.php?access_code=$1 [L]
+
+#For User dashboard
+RewriteRule ^dashboard/?$ dash.php [L]
+RewriteRule ^dashboard/page/([0-9]+)?$ dash.php?pageno=$1 [L]
+RewriteRule ^dashboard/profile/?$ dashboard-editprofile.php [L]
+
+RewriteRule ^lout/?$ dashboard-logout.php [L]
+
+#For inner pages.
+RewriteRule ^page/([a-zA-Z0-9-]+)/?$ inner.php?slug=$1 [L]
+
+#For offer pages.
+RewriteRule ^offer/([a-zA-Z0-9-]+)/?$ offer.php?slug=$1 [L]
+
+#For attraction pages.
+RewriteRule ^attraction/([a-zA-Z0-9-]+)/?$ attractions.php?slug=$1 [L]
+
+#For hotel-list.
+RewriteRule ^hotel-list/?$ hotel-list.php [L]
+#RewriteRule ^hotellist/?$ hotellist.php [L]
+RewriteRule ^hotellist/([a-zA-Z0-9-]+)$ destination.php?slug=$1 [L]
+
+#For BLOG pages.
+RewriteRule ^blog/?$ blogs.php [L]
+RewriteRule ^blog/([a-zA-Z0-9-=]+)$ blogs.php?slug=$1 [L]
+
+#RewriteRule ^halllist/?$ halllist.php [L]
+RewriteRule ^meetingandevents/?$ hall-list.php [L]
+RewriteRule ^meetingandevents/page/([0-9]+)?$ hall-list.php?pageno=$1 [L]
+RewriteRule ^meetingandevents/location/([0-9]+)/page/([0-9]+)?$ hall-list.php?dest=$1&pageno=$2 [L]
+
+#RewriteRule ^FAQ/?$ halllist.php [L]
+RewriteRule ^faq/?$ faqlist.php [L]
+
+#RewriteRule ^offerlist/?$ offerlist.php [L]
+RewriteRule ^offers/?$ offer-list.php [L]
+RewriteRule ^wed/?$ wedding.php [L]
+
+
+
+#For Hotel search pages.
+RewriteRule ^search/([a-zA-Z0-9-=]+)/?$ hotelsearch.php?code=$1 [L]
+
+#For Hotel 
+RewriteRule ^hotelimage/([a-zA-Z0-9-]+)/?$ hotelimage.php?code=$1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/?$ hoteldetail.php?slug=$1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/restaurant?$ restaurant.php?slug=$1&restaurant=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/cuisine?$ cuisine.php?slug=$1&cuisine=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/breads?$ breads.php?slug=$1&breads=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/cakes?$ cakes.php?slug=$1&cakes=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/beverages?$ beverages.php?slug=$1&beverages=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/whyus?$ whyus.php?slug=$1&whyus=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/fitness?$ fitnessdetail.php?slug=$1&fitness=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/contact?$ contactdetail.php?slug=$1&contact=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/wedding?$ weddingdetail.php?slug=$1&wedding=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/hall?$ halldetail.php?slug=$1&hall=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/review?$ review.php?slug=$1&review=1 [L]
+RewriteRule ^hotel/([a-zA-Z0-9-]+)/review/([0-9]+)?$ review.php?slug=$1&review=1&pageno=$2 [L]
+
+
+
+
+#For Package
+RewriteRule ^package/([a-zA-Z0-9-]+)$ packagedetail.php?slug=$1 [L]
+RewriteRule ^package/search/$ packagesearch.php [L]
+RewriteRule ^package/search/([a-zA-Z0-9-=]+)/?$ packagesearch.php?code=$1 [L]
+RewriteRule ^book/package/([a-zA-Z0-9-]+)/?$ booking.php?slug=$1 [L]
+
+#For Vehicle
+RewriteRule ^vehicle/search/$ vsearch.php [L]
+RewriteRule ^vehicle/([a-zA-Z0-9-=]+)/?$ vehicle-list.php?code=$1 [L]
+RewriteRule ^book/vehicle/([a-zA-Z0-9-=]+)/?$ book_vehicle.php?code=$1 [L]
+
+#For Cities Us
+RewriteRule ^destination/?$ cities.php [L] 
+
+#For news pages
+RewriteRule ^newslist/?$ news_list.php [L]
+RewriteRule ^news/([a-zA-Z0-9-]+)?$ news.php?slug=$1 [L]
+RewriteRule ^newslist/page/([0-9]+)?$ news_list.php?pageno=$1 [L]
+#RewriteRule ^newslist/([0-9]+)/page/([0-9]+)?$ news_list.php?pageno=$2 [L]
+
+#For Contact Us
+RewriteRule ^contact/?$ contact.php [L]
+
+#For Himalayan Bank
+RewriteRule ^payment-checkout$ main-payact.php [L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php71” package as the default “PHP” programming language.
+<IfModule mime_module>
+  #AddHandler application/x-httpd-ea-php71 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

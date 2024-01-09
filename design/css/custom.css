@@ -1,0 +1,53 @@
+.cstm_height{
+    height: 10rem;
+    overflow-y: auto;
+}
+header{
+    z-index: 2;
+    position: relative;
+}
+
+.head{
+    position: relative;
+    z-index: 3;
+    background:white;
+}
+
+.hotel_menu{
+    position: fixed;
+    left:0;
+    right:0;
+    background:#333;
+    top:-1000px;
+    padding:30px;
+    min-height: 600px;
+    /* transition: all 0.4s ease; */
+    opacity: 0;
+    
+}
+
+.menu_active{
+    top:140px;
+    opacity: 1;
+}
+
+.hotel_menu *, .mobmenu *{
+    color:white;
+
+}
+
+.mobmenu{
+    position: fixed;
+    top: 154px;
+    background: #333;
+    left: 0;
+    right: 0;
+    height: 100vh;
+}
+
+.mobmenu .dropdown-menu{
+    background: inherit;
+    box-shadow: none;
+    position: relative;
+    border:none;
+}

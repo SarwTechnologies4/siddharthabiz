@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+    <head>
+        <jcms:site:fevicon/>
+        <jcms:site:seotitle/>
+        
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+        <!--Default CSS-->
+        <link rel="stylesheet" href="css/default.css" type="text/css">
+        <!--Custom CSS-->
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <!--Plugin CSS-->
+        <link rel="stylesheet" href="css/plugin.css" type="text/css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+<body>
+    <jcms:module:header/>
+        
+    <!-- breadcrumbs starts -->
+    <jcms:module:hotelbreadcrumb/>
+    <!-- breadcrumbs Ends -->
+
+    <jcms:module:hall-details/>
+  
+    <!-- Call To Action Starts -->
+    <section class="call-to-action">
+        <div class="container-xxl px-md-5 px-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="images/add.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call To Action Ends -->
+
+  
+
+    <jcms:module:footer-booking/>
+    <jcms:module:hall-modals/>
+    <jcms:module:subscribers:login-register-form/>
+    
+    <!-- Back to top start -->
+    <div id="back-to-top">
+        <a href="#"></a>
+    </div>
+    <!-- Back to top ends -->
+    
+    <!-- *Scripts* -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/custom-nav.js"></script>
+    <script src="js/custom-swiper2.js"></script>
+    <!--<script src="js/custom-singledate.js"></script>-->
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src='https://cdn.jsdelivr.net/momentjs/latest/moment.min.js'></script>
+    <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js'></script>
+
+    <script>
+        
+        $(function(){
+            
+
+           
+        })
+    </script>
+    <script>
+        $(function() {
+        
+        
+        $("#signinn").on("click", function() {
+          $("#home-tab").click();
+        });
+      });
+    </script>
+    <script>
+        
+        
+        var base_url = jQuery('base').attr('url');
+        
+        
+        if ($('#hotelsearchform')[0]) {
+    
+            $("#searchkey").autocomplete({
+                source: base_url + "hotelcomplete.php",
+                // minLength: 2,
+                showHintOnFocus: true,
+                select: function (event, ui) {
+                    console.log(ui);
+                    $('input[name="hotelid"]').val(ui.item.id);
+                    $('input[name="hotelslug"]').val(ui.item.slug);
+                    $('input[name="hotel_code"]').val(ui.item.hotel_code);
+                }
+            });
+    
+            $('#date-range2').daterangepicker({
+            minDate: moment(),
+            startDate: moment().add(1,'days'),
+            endDate: moment().add(2,'days'),
+            locale: {
+      format: 'YYYY-MM-DD'
+    }
+});
+    
+            $("#hotelsearchform").validate({
+                errorElement: 'span',
+                errorClass: 'validate-has-error',
+                rules: {
+                    searchkey: {required: true,},
+                    hotelid: {required: true}
+                },
+                messages: {
+                    searchkey: {required: "Please enter a destination to start searching.",},
+                    hotelid: {required: ''}
+                },
+                submitHandler: function (form) {
+                    var Frmval = $("#hotelsearchform").serialize();
+                    var base_url = jQuery('base').attr('url');
+    
+                     console.log(Frmval);
+                    $("#btn-search");
+                    var hotelslug = $('input[name="hotelslug"]').val();
+                    var date = $('input[name="date-range2"]').val();
+                    var hotel_code = $('input[name="hotel_code"]').val();
+                    
+                    var splidate = date.split('-');
+                    
+                    var url = base_url+"/result.php?hotel_code=" + hotel_code + "&hotel_check_in=" + $.trim(splidate[0]) + - + $.trim(splidate[1]) + - + $.trim(splidate[2]) + "&hotel_check_out=" + $.trim(splidate[3]) + - + $.trim(splidate[4]) + - +$.trim(splidate[5]);
+                    window.open(url, '_blank')
+                   
+                    
+                    return false;
+                }
+            });
+    
+        }
+    </script>
+    <script type="text/javascript">
+        var base_url = $('base').attr('url');
+        jQuery.validator.methods.matches = function( value, element, params ) {
+    var re = new RegExp(params);
+    // window.console.log(re);
+    // window.console.log(value);
+    // window.console.log(re.test( value ));
+    return this.optional( element ) || re.test( value );
+}
+        $(document).ready(function () {
+            // console.log(base_url);
+            $('#frm_contact').validate({
+                errorElement: 'span',
+                errorClass: 'validate-has-error',
+                rules: {
+                    name: {required: true},
+                    phone: {required: true, 
+            matches   : "([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})",
+            minlength : 10,
+            maxlength : 20},
+                    email: {required: true, email: true},
+                    message: {required: true}
+                },
+                messages: {
+                    name: {required: "Please enter your Name."},
+                    phone: {required: "Please enter your Phone Number.",matches:"Please enter correct number."},
+                    email: {required: "Please enter your Email Address."},
+                    message: {required: "Please enter your Message."}
+                },
+                submitHandler: function (form) {
+                    var Frmval = $("form#frm_contact").serialize();
+                    $("input#submit").attr("disabled", "true").val('Processing...');
+                    $.ajax({
+                        type: "POST",
+                        dataType: "JSON",
+                        url: base_url + "enquery_mail.php",
+                        data: "action=forHall&" + Frmval,
+                        success: function (data) {
+                            var msg = eval(data);
+                            $("input#submit").removeAttr("disabled").val('Submit');
+                            $('div#result_msg').html(msg.message).css('display', 'block').fadeOut(8000);
+                            $("form#frm_contact")[0].reset();
+                        }
+                    });
+                    return false;
+                }
+            })
+        });
+    </script>
+</body>
+</html>
