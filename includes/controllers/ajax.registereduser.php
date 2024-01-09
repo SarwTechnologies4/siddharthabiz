@@ -391,6 +391,9 @@ switch($action)
                                 <strong>E-mail Address</strong>: ' . $record->email . '<br />
                                 <strong>Phone Number</strong>: ' . $record->contact . '<br />
                             </p>
+                            <p>
+                            Please <a href="' . BASE_URL . 'index.php?open_login=true">click here to login</a></p>
+
                             <!--<p>Please log in through ' . BASE_URL . 'apanel or click <a href="' . BASE_URL . 'apanel" target="_blank">here</a></p></p>-->
 				 		</td>
 			  		</tr>
