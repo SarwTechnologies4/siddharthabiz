@@ -14,6 +14,8 @@
     $sitename = Config::getField('sitename',true);
     $bccmail = User::field_by_id('1','optional_email');
 
+    $ccusermail = User::field_by_id(1, 'optional_email');
+
 	switch($action)
 	{
 		case "addNewUser":
@@ -417,7 +419,6 @@
                                 <strong>E-mail Address</strong>: ' . $record->email . '<br />
                                 </p>
                                 <p style="color:#0065B3; font-size:14px; font-weight:bold">
-                                Please <a href="' . BASE_URL . 'index.php?open_login=true">click here to login</a></p>
                             </td>
                         </tr>
                         <tr>
@@ -436,7 +437,6 @@
                 $mail->Username = "noreply@gundri.com";     // SMTP server username
                 $mail->Password = "Gundri@1234";            // SMTP server password
 
-
                 $mail->SetFrom($usermail, $sitename);
                 $mail->AddReplyTo($usermail, $sitename);
                 $mail->AddAddress($record->email, $fullname);
@@ -444,6 +444,16 @@
                 $mail->MsgHTML($body);
 
                 $mail->IsHTML(true); // send as HTML
+
+                
+                if (!empty($ccusermail)) {
+                    $rec = explode(';', $ccusermail);
+                    if ($rec) {
+                        foreach ($rec as $row) {
+                            $mail->AddCC($row, $sitename);
+                        }
+                    }
+                }
 
                 if (!$mail->Send()) {
                     $message = "Sorry! Could not send your request.";
