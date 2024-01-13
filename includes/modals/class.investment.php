@@ -1,64 +1,77 @@
 <?php
 
-class Shareholder extends DatabaseObject
+class Investment extends DatabaseObject
 {
 
-    protected static $table_name = "tbl_shareholders";
-    protected static $db_fields = array(
-        'id', 'internal_id', 'name', 'gender', 'citizenship', 'citizenship_district', 'citizenship_issue_date',
-        'father', 'grand_father', 'mother', 'spouse', 'nominee', 'nominee_citizenship', 'nominee_relationship',
-        'type_id', 'permanent_address', 'temporary_address', 'changed_address',
-        'pan_number', 'bank', 'bank_account', 'bank_branch', 'bank_account_name',
-        'phone', 'mobile', 'email', 'terminated_date', 'terminated_amount',
-        'citizenship_image', 'pan_image', 'license_image', 'pp_image',
-        'company_name', 'company_address', 'company_pan', 'company_image',
-        'status', 'sortorder');
+    protected static $table_name = "tbl_investment";
+    protected static $db_fields = array('id', 'company_id', 'shareholder_id', 'alloted_quantity', 'price_per_share', 'investment_amount', 'percentage', 'added_date', 'deleted' , 'long_name', 'shareholders_number', 'shareholders_name');// , 'long_name', 'shareholders_number', 'shareholders_name'
 
-    public $id;    public $internal_id;    public $name;    public $gender;    public $citizenship;    public $citizenship_district;    public $citizenship_issue_date;
-    public $father;    public $grand_father;    public $mother;    public $spouse;    public $nominee;    public $nominee_citizenship;    public $nominee_relationship;
-    public $type_id;    public $permanent_address;    public $temporary_address;    public $changed_address;
-    public $pan_number;    public $bank;    public $bank_account;    public $bank_branch;    public $bank_account_name;
-    public $phone;    public $mobile;    public $email;    public $terminated_date;    public $terminated_amount;
-    public $citizenship_image;    public $pan_image;    public $license_image;    public $pp_image;
-    public $company_name;    public $company_address;    public $company_pan;    public $company_image;    public $meta_description;
-    public $status;    public $sortorder;
+    public $id;
+    public $company_id;
+    public $shareholder_id;
+    public $alloted_quantity;
+    public $price_per_share;
+    public $investment_amount;
+    public $percentage;
+    public $added_date;
+    public $deleted;
+    public $long_name;
+    public $shareholders_number;
+    public $shareholders_name;
 
-    //Find all published rows in the current database table.
-
-    public static function checkDupliName($title = '')
+    public static function agg_data()
     {
         global $db;
-        $query = $db->query("SELECT `name` FROM " . self::$table_name . " WHERE `name`='$title' LIMIT 1");
-        $result = $db->num_rows($query);
-        if ($result > 0) {
-            return true;
+        $sql = "SELECT hotel.id, hotel.long_name, COUNT(inv.id) AS shareholders_number, SUM(inv.alloted_quantity) AS alloted_quantity, SUM(inv.investment_amount) AS investment_amount";
+        $sql .= " FROM " . self::$table_name . " AS inv";
+        $sql .= " LEFT JOIN tbl_apihotel AS hotel ON hotel.id = inv.company_id";
+        $sql .= " WHERE inv.deleted = 0";
+        $sql .= " GROUP BY inv.company_id";
+        $sql .= " ORDER BY inv.`id` DESC";
+        $result = $db->query($sql);
+        $object_array = [];
+        while ($row = $db->fetch_array($result)) {
+            $object_array[] = self::instantiate($row);
         }
+        return $object_array;
+
     }
 
-    public static function checkDupliId($id = '')
+    // Investment display
+    public static function getInvestmentByCompany($company_id)
     {
         global $db;
-        $query = $db->query("SELECT `internal_id` FROM " . self::$table_name . " WHERE `internal_id`='$id' LIMIT 1");
-        $result = $db->num_rows($query);
-        if ($result > 0) {
-            return true;
-        }
+        $sql = "SELECT inv.*, shareholder.name as shareholders_name";
+        $sql .= " FROM " . self::$table_name . " AS inv";
+        $sql .= " LEFT JOIN tbl_shareholders AS shareholder ON shareholder.id = inv.shareholder_id";
+        $sql .= " WHERE inv.deleted = 0";
+        $sql .= " AND inv.company_id = " . $company_id;
+        $sql .= " ORDER BY inv.`id` DESC";
+        $result_array = self::find_by_sql($sql);
+        return $result_array;
     }
 
-    //FIND THE HIGHEST MAX NUMBER.
-    public static function find_maximum($field = "sortorder")
+    // Get investment list for filter
+    public static function get_investment()
     {
         global $db;
-        $result = $db->query("SELECT MAX({$field}) AS maximum FROM " . self::$table_name);
-        $return = $db->fetch_array($result);
-        return ($return) ? ($return['maximum'] + 1) : 1;
+        $sql = "SELECT id FROM " . self::$table_name . " WHERE deleted=0 ORDER BY `id` ASC ";
+        return self::find_by_sql($sql);
+    }
+
+    // Investment display
+    public static function getInvestment($page = "")
+    {
+        global $db;
+        $result_array = self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE name='{$page}' AND deleted=0 LIMIT 1");
+        return !empty($result_array) ? array_shift($result_array) : false;
     }
 
     //Find all the rows in the current database table.
     public static function find_all()
     {
         global $db;
-        return self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE status=1 ORDER BY sortorder ASC");
+        return self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE deleted=0 ORDER BY `id` ASC");
     }
 
     //Get sortorder by id
@@ -75,7 +88,11 @@ class Shareholder extends DatabaseObject
     public static function find_by_id($id = 0)
     {
         global $db;
-        $result_array = self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE id={$id} LIMIT 1");
+        $sql = "SELECT inv.*, shareholder.name as shareholders_name";
+        $sql .= " FROM " . self::$table_name . " AS inv";
+        $sql .= " LEFT JOIN tbl_shareholders AS shareholder ON shareholder.id = inv.shareholder_id";
+        $sql .= " WHERE inv.id = {$id} LIMIT 1";
+        $result_array = self::find_by_sql($sql);
         return !empty($result_array) ? array_shift($result_array) : false;
     }
 

@@ -58,9 +58,9 @@ switch ($action) {
         $record->meta_keywords = $_REQUEST['meta_keywords'];
         $record->meta_description = $_REQUEST['meta_description'];
 
-        $checkDupliName = Shareholder::checkDupliName($record->name);
+        // $checkDupliName = Shareholder::checkDupliName($record->name);
         $checkDupliID = Shareholder::checkDupliID($record->internal_id);
-        if ($checkDupliName || $checkDupliID):
+        if ($checkDupliID):
             echo json_encode(array("action" => "warning", "message" => "Title OR ID Already Exists."));
             exit;
         endif;
@@ -78,13 +78,13 @@ switch ($action) {
     case "edit":
         $record = Shareholder::find_by_id($_REQUEST['idValue']);
 
-        if ($record->name != $_REQUEST['name']) {
-            $checkDupliName = Shareholder::checkDupliName($_REQUEST['name']);
-            if ($checkDupliName):
-                echo json_encode(array("action" => "warning", "message" => "Articles title is already exist."));
-                exit;
-            endif;
-        }
+        // if ($record->name != $_REQUEST['name']) {
+        //     $checkDupliName = Shareholder::checkDupliName($_REQUEST['name']);
+        //     if ($checkDupliName):
+        //         echo json_encode(array("action" => "warning", "message" => "Shareholder name is already exist."));
+        //         exit;
+        //     endif;
+        // }
         if ($record->internal_id != $_REQUEST['internal_id']) {
             $checkDupliID = Shareholder::checkDupliID($_REQUEST['internal_id']);
             if ($checkDupliID):

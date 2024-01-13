@@ -14,10 +14,24 @@ $shareHolderTypes = ShareholderType::find_by_sql("SELECT * from tbl_shareholders
 
 if (isset($_GET['page']) && $_GET['page'] == "shareholder" && isset($_GET['mode']) && $_GET['mode'] == "list"):
     clearImages($moduleTablename, "shareholder");
-    clearImages($moduleTablename, "shareholder/thumbnails");
 
-    clearImages($moduleTablename, "shareholder/listimage", "list_image");
-    clearImages($moduleTablename, "shareholder/listimage/thumbnails", "list_image");
+    clearImages($moduleTablename, "shareholder/citizenship_image", "citizenship_image");
+    clearImages($moduleTablename, "shareholder/citizenship_image/thumbnails", "citizenship_image");
+
+    clearImages($moduleTablename, "shareholder/company_image", "company_image");
+    clearImages($moduleTablename, "shareholder/company_image/thumbnails", "company_image");
+
+    clearImages($moduleTablename, "shareholder/license_image", "license_image");
+    clearImages($moduleTablename, "shareholder/license_image/thumbnails", "license_image");
+
+    clearImages($moduleTablename, "shareholder/pan_image", "pan_image");
+    clearImages($moduleTablename, "shareholder/pan_image/thumbnails", "pan_image");
+
+    clearImages($moduleTablename, "shareholder/pp_image", "pp_image");
+    clearImages($moduleTablename, "shareholder/pp_image/thumbnails", "pp_image");
+
+    // clearImages($moduleTablename, "shareholder/listimage", "list_image");
+    // clearImages($moduleTablename, "shareholder/listimage/thumbnails", "list_image");
     ?>
     <h3>
         List Shareholders
