@@ -61,3 +61,20 @@ CREATE TABLE `tbl_shareholders_type` (
 /*Data for the table `tbl_shareholders_type` */
 
 insert  into `tbl_shareholders_type`(`id`,`title`,`status`,`sortorder`) values (1,'BOD',1,1),(2,'Active Shareholder',1,1),(3,'Silence Shareholder',1,1);
+
+
+CREATE TABLE `tbl_investment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `shareholder_id` int(11) NOT NULL,
+  `alloted_quantity` int(11) NOT NULL,
+  `price_per_share` decimal(10,2) NOT NULL,
+  `investment_amount` decimal(10,2) NOT NULL,
+  `percentage` decimal(10,2) NOT NULL,
+  `added_date` date NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0,
+  `long_name` varchar(255) DEFAULT NULL,
+  `shareholders_number` int(11) DEFAULT NULL,
+  `shareholders_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
