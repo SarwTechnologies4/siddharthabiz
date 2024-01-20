@@ -78,3 +78,18 @@ CREATE TABLE `tbl_investment` (
   `shareholders_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `tbl_payment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `shareholder_id` int(11) NOT NULL,
+  `payment_mode` varchar(20) NOT NULL,
+  `bank_name` varchar(255) NOT NULL,
+  `payment_amount` decimal(10,2) NOT NULL,
+  `date` date NOT NULL,
+  `added_date` date NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0,
+  `long_name` varchar(255) DEFAULT NULL,
+  `shareholders_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
