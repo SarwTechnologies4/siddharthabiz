@@ -25,7 +25,7 @@ if (isset($_GET['page']) && $_GET['page'] == "payment" && isset($_GET['mode']) &
                     <th style="display:none;"></th>
                     <th class="text-center"><input class="check-all" type="checkbox"/></th>
                     <th class="text-left">Company Name</th>
-                    <th class="text-left">Total Payment Amount</th>
+                    <th class="text-left">Total Payment Received</th>
                     <th class="text-center" width="20%"><?php echo $GLOBALS['basic']['action']; ?></th>
                 </tr>
                 </thead>
@@ -176,14 +176,14 @@ if (isset($_GET['page']) && $_GET['page'] == "payment" && isset($_GET['mode']) &
                 </div>   
 
                 <div class="form-row" id="bank_name_input" 
-                    style="display:<?php echo !empty($paymentInfo->payment_mode) && $paymentInfo->payment_mode == 'cash' ? 'none' : 'block'; ?>;">
+                    style="display:<?php echo !empty($paymentInfo->payment_mode) && $paymentInfo->payment_mode == 'bank' ? 'block' : 'none'; ?>;">
                     <div class="form-label col-md-2">
                         <label for="bank_name">
                             Bank Name :
                         </label>
                     </div>
                     <div class="form-input col-md-10">
-                        <input placeholder="Bank Name" class="col-md-6 <?php echo !empty($paymentInfo->payment_mode) && $paymentInfo->payment_mode == 'cash' ? '' : 'validate[required]'; ?> " type="text" name="bank_name" 
+                        <input placeholder="Bank Name" class="col-md-6 <?php echo !empty($paymentInfo->payment_mode) && $paymentInfo->payment_mode == 'bank' ? 'validate[required]' : ''; ?> " type="text" name="bank_name" 
                         id="bank_name" value="<?php echo !empty($paymentInfo->bank_name) ? $paymentInfo->bank_name : ''; ?>">
                     </div>
                 </div> 
