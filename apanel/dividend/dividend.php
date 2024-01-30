@@ -75,20 +75,29 @@ if (isset($_GET['page']) && $_GET['page'] == "dividend" && isset($_GET['mode']) 
 
 </div>
 
-<?php elseif (isset($_GET['mode']) && $_GET['mode'] == "addEdit"):
+<?php elseif (isset($_GET['mode']) && ($_GET['mode'] == "addEdit" || $_GET['mode'] == "addNew")):
     $shareHolders = Shareholder::find_all();
     $companies = Hotelapi::find_all_active();
 
-    if (isset($_GET['id']) && !empty($_GET['id'])):
+    if ($_GET['mode'] == "addEdit" && isset($_GET['id']) && !empty($_GET['id'])):
         $dividendId = addslashes($_REQUEST['id']);
         $dividendInfo = Dividend::find_by_id($dividendId);
 
-        $company = Hotelapi::find_by_id($dividendInfo->company_id);
-        $shareHolder = Shareholder::find_by_id($dividendInfo->shareholder_id);
+        $company = array_reduce($companies, function ($carry, $item) use ($dividendInfo) {
+            return $item->id == $dividendInfo->company_id ? $item : $carry;
+        }, null);
+
+        $shareHolder = array_reduce($shareHolders, function ($carry, $item) use ($dividendInfo) {
+            return $item->id == $dividendInfo->shareholder_id ? $item : $carry;
+        }, null);
+    elseif ($_GET['mode'] == "addNew" && isset($_GET['id']) && !empty($_GET['id'])):
+        $shareHolder = array_reduce($shareHolders, function ($carry, $item) {
+            return $item->id == $_GET['id']? $item : $carry;
+        }, null);
     endif;
     ?>
 <h3>
-    <?php echo (isset($_GET['id'])) ? 'Edit dividend' : 'Add dividend'; ?>
+    <?php echo ($_GET['mode'] == "addEdit" && isset($_GET['id'])) ? 'Edit dividend' : 'Add dividend'; ?>
     <a class="loadingbar-demo btn medium bg-blue-alt float-right" href="javascript:void(0);"
         onClick="viewDividendlist();">
         <span class="glyph-icon icon-separator">
@@ -231,8 +240,8 @@ if (isset($_GET['page']) && $_GET['page'] == "dividend" && isset($_GET['mode']) 
                     </label>
                 </div>
                 <div class="form-input col-md-10">
-                    <input placeholder="Fiscal Year" class="col-md-6 validate[required]" type="text" name="period_fiscal"
-                        id="period_fiscal"
+                    <input placeholder="Fiscal Year" class="col-md-6 validate[required]" type="text"
+                        name="period_fiscal" id="period_fiscal"
                         value="<?php echo !empty($dividendInfo->period_fiscal) ? $dividendInfo->period_fiscal : ''; ?>">
                 </div>
             </div>

@@ -36,6 +36,24 @@ class Payment extends DatabaseObject
 
     }
 
+    public static function find_by_shareHolder($shareholder_id)
+    {
+        global $db;
+        $sql = "SELECT hotel.long_name, inv.payment_mode, inv.bank_name, inv.payment_amount";
+        $sql .= " FROM " . self::$table_name . " AS inv";
+        $sql .= " LEFT JOIN tbl_apihotel AS hotel ON hotel.id = inv.company_id";
+        $sql .= " WHERE inv.deleted = 0";
+        $sql .= " AND inv.shareholder_id = " . $shareholder_id;
+        $sql .= " ORDER BY inv.`id` DESC";
+        $result = $db->query($sql);
+        $object_array = [];
+        while ($row = $db->fetch_array($result)) {
+            $object_array[] = self::instantiate($row);
+        }
+        return $object_array;
+
+    }
+
     // Payment display
     public static function getPaymentByCompany($company_id)
     {

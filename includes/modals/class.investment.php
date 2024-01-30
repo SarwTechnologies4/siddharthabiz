@@ -37,6 +37,24 @@ class Investment extends DatabaseObject
 
     }
 
+    public static function find_by_shareHolder($shareholder_id)
+    {
+        global $db;
+        $sql = "SELECT hotel.long_name, inv.price_per_share, inv.alloted_quantity";
+        $sql .= " FROM " . self::$table_name . " AS inv";
+        $sql .= " LEFT JOIN tbl_apihotel AS hotel ON hotel.id = inv.company_id";
+        $sql .= " WHERE inv.deleted = 0";
+        $sql .= " AND inv.shareholder_id = " . $shareholder_id;
+        $sql .= " ORDER BY inv.`id` DESC";
+        $result = $db->query($sql);
+        $object_array = [];
+        while ($row = $db->fetch_array($result)) {
+            $object_array[] = self::instantiate($row);
+        }
+        return $object_array;
+
+    }
+
     // Investment display
     public static function getInvestmentByCompany($company_id)
     {

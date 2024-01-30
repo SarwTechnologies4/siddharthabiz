@@ -67,20 +67,29 @@ if (isset($_GET['page']) && $_GET['page'] == "payment" && isset($_GET['mode']) &
         
     </div>
 
-<?php elseif (isset($_GET['mode']) && $_GET['mode'] == "addEdit"):
+<?php elseif (isset($_GET['mode']) && ($_GET['mode'] == "addEdit" || $_GET['mode'] == "addNew")):
     $shareHolders = Shareholder::find_all();
     $companies = Hotelapi::find_all_active();
 
-    if (isset($_GET['id']) && !empty($_GET['id'])):
+    if ($_GET['mode'] == "addEdit" && isset($_GET['id']) && !empty($_GET['id'])):
         $paymentId = addslashes($_REQUEST['id']);
         $paymentInfo = Payment::find_by_id($paymentId);
 
-        $company = Hotelapi::find_by_id($paymentInfo->company_id);
-        $shareHolder = Shareholder::find_by_id($paymentInfo->shareholder_id);
+        $company = array_reduce($companies, function ($carry, $item) use ($paymentInfo) {
+            return $item->id == $paymentInfo->company_id ? $item : $carry;
+        }, null);
+
+        $shareHolder = array_reduce($shareHolders, function ($carry, $item) use ($paymentInfo) {
+            return $item->id == $paymentInfo->shareholder_id ? $item : $carry;
+        }, null);
+    elseif ($_GET['mode'] == "addNew" && isset($_GET['id']) && !empty($_GET['id'])):
+        $shareHolder = array_reduce($shareHolders, function ($carry, $item) {
+            return $item->id == $_GET['id'] ? $item : $carry;
+        }, null);
     endif;
     ?>
     <h3>
-        <?php echo (isset($_GET['id'])) ? 'Edit payment' : 'Add payment'; ?>
+        <?php echo ($_GET['mode'] == "addEdit" && isset($_GET['id'])) ? 'Edit payment' : 'Add payment'; ?>
         <a class="loadingbar-demo btn medium bg-blue-alt float-right" href="javascript:void(0);"
            onClick="viewPaymentlist();">
             <span class="glyph-icon icon-separator">
