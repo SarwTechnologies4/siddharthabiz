@@ -44,6 +44,7 @@ endif ?>
                                     <th class="text-left">Company</th>
                                     <th class="text-left">Dividend Amount</th>
                                     <th class="text-left">Fiscal Year</th>
+                                    <th class="text-left">Date</th>
                                 </tr>
                             </thead>
 
@@ -52,15 +53,10 @@ endif ?>
                                 foreach ($records as $key => $record): ?>
                                 <tr id="<?php echo $record->id; ?>">
                                     <td style="display:none;"><?php echo $key + 1; ?></td>
-                                    <td>
-                                        <?php echo $record->long_name; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $record->payment_amount; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $record->period_fiscal; ?>
-                                    </td>
+                                    <td> <?php echo $record->long_name; ?> </td>
+                                    <td> <?php echo $record->payment_amount; ?> </td>
+                                    <td> <?php echo $record->period_fiscal; ?> </td>
+                                    <td> <?php echo $record->date; ?> </td>
 
                                 </tr>
                                 <?php endforeach; ?>
@@ -100,18 +96,10 @@ endif ?>
                                     <td style="display:none;">
                                         <?php echo $key + 1; ?>
                                     </td>
-                                    <td>
-                                        <?php echo $record->long_name; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $record->alloted_quantity; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $record->price_per_share; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $record->alloted_quantity * $record->price_per_share; ?>
-                                    </td>
+                                    <td> <?php echo $record->long_name; ?> </td>
+                                    <td> <?php echo $record->alloted_quantity; ?> </td>
+                                    <td> <?php echo $record->price_per_share; ?> </td>
+                                    <td> <?php echo $record->alloted_quantity * $record->price_per_share; ?> </td>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -140,6 +128,7 @@ endif ?>
                                     <th class="text-left">Payment mode</th>
                                     <th class="text-left">Bank</th>
                                     <th class="text-left">Payment Amount</th>
+                                    <th class="text-left">Date</th>
                                 </tr>
                             </thead>
 
@@ -150,18 +139,11 @@ endif ?>
                                     <td style="display:none;">
                                         <?php echo $key + 1; ?>
                                     </td>
-                                    <td>
-                                        <?php echo $record->long_name; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $record->payment_mode; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $record->bank_name; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $record->payment_amount; ?>
-                                    </td>
+                                    <td> <?php echo $record->long_name; ?> </td>
+                                    <td> <?php echo $record->payment_mode; ?> </td>
+                                    <td> <?php echo $record->bank_name; ?> </td>
+                                    <td> <?php echo $record->payment_amount; ?> </td>
+                                    <td> <?php echo $record->date; ?> </td>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -177,11 +159,11 @@ endif ?>
 <script type="text/javascript">
 $(function() {
     $("#tabs").tabs();
-    
+
     $('#dividend-table, #investment-table, #payment-table').dataTable({
-		"bJQueryUI": true,
-		"sPaginationType": "full_numbers"
-	})
+        "bJQueryUI": true,
+        "sPaginationType": "full_numbers"
+    })
 });
 </script>
 

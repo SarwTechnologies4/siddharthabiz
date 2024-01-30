@@ -39,7 +39,7 @@ class Payment extends DatabaseObject
     public static function find_by_shareHolder($shareholder_id)
     {
         global $db;
-        $sql = "SELECT hotel.long_name, inv.payment_mode, inv.bank_name, inv.payment_amount";
+        $sql = "SELECT hotel.long_name, inv.payment_mode, inv.bank_name, inv.payment_amount, DATE_FORMAT(inv.date, '%Y-%m-%d') AS `date`";
         $sql .= " FROM " . self::$table_name . " AS inv";
         $sql .= " LEFT JOIN tbl_apihotel AS hotel ON hotel.id = inv.company_id";
         $sql .= " WHERE inv.deleted = 0";
