@@ -4,7 +4,7 @@ class Payment extends DatabaseObject
 {
 
     protected static $table_name = "tbl_payment";
-    protected static $db_fields = array('id', 'company_id', 'shareholder_id', 'payment_mode', 'bank_name', 'payment_amount', 'date', 'added_date', 'deleted' , 'long_name', 'shareholders_name');// , 'long_name', 'shareholders_name'
+    protected static $db_fields = array('id', 'company_id', 'shareholder_id', 'payment_mode', 'bank_name', 'payment_amount', 'date', 'added_date', 'deleted');
 
     public $id;
     public $company_id;
@@ -15,8 +15,6 @@ class Payment extends DatabaseObject
     public $date;
     public $added_date;
     public $deleted;
-    public $long_name;
-    public $shareholders_name;
 
     public static function agg_data()
     {
@@ -27,12 +25,8 @@ class Payment extends DatabaseObject
         $sql .= " WHERE inv.deleted = 0";
         $sql .= " GROUP BY inv.company_id";
         $sql .= " ORDER BY inv.`id` DESC";
-        $result = $db->query($sql);
-        $object_array = [];
-        while ($row = $db->fetch_array($result)) {
-            $object_array[] = self::instantiate($row);
-        }
-        return $object_array;
+        $result = self::objectify_sql($sql);
+        return $result;
 
     }
 
@@ -45,13 +39,8 @@ class Payment extends DatabaseObject
         $sql .= " WHERE inv.deleted = 0";
         $sql .= " AND inv.shareholder_id = " . $shareholder_id;
         $sql .= " ORDER BY inv.`id` DESC";
-        $result = $db->query($sql);
-        $object_array = [];
-        while ($row = $db->fetch_array($result)) {
-            $object_array[] = self::instantiate($row);
-        }
-        return $object_array;
-
+        $result = self::objectify_sql($sql);
+        return $result;
     }
 
     // Payment display
@@ -64,8 +53,31 @@ class Payment extends DatabaseObject
         $sql .= " WHERE inv.deleted = 0";
         $sql .= " AND inv.company_id = " . $company_id;
         $sql .= " ORDER BY inv.`id` DESC";
-        $result_array = self::find_by_sql($sql);
-        return $result_array;
+        $result = self::objectify_sql($sql);
+        return $result;
+    }
+
+    //Find a single row in the database where id is provided.
+    public static function detail_by_id($id = 0)
+    {
+        global $db;
+        $sql = "SELECT inv.*, shareholder.name as shareholders_name";
+        $sql .= " FROM " . self::$table_name . " AS inv";
+        $sql .= " LEFT JOIN tbl_shareholders AS shareholder ON shareholder.id = inv.shareholder_id";
+        $sql .= " WHERE inv.id = {$id} LIMIT 1";
+        $result = self::objectify_sql($sql);
+        return !empty($result) ? array_shift($result) : false;
+    }
+
+    public static function objectify_sql($sql)
+    {
+        global $db;
+        $result = $db->query($sql);
+        $object_array = [];
+        while ($row = $db->fetch_array($result)) {
+            $object_array[] = (object) $row;
+        }
+        return $object_array;
     }
 
     // Get payment list for filter

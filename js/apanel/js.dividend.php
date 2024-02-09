@@ -188,15 +188,12 @@ function viewRecord(Re) {
 }
 
 /***************************************** Edit records *****************************************/
-function downloadExcel(Re) {
+function viewReport() {
+    window.location.href = "<?php echo ADMIN_URL ?>dividend/viewReport";
+    }
 
-    $.ajax({
-        type: "POST",
-        dataType: "JSON",
-        url: getLocation(),
-        data: 'action=downloadExcel&id=' + Re,
-        success: function(data) {}
-    });
-    // window.location.href = "<?php echo ADMIN_URL?>dividend/downloadExcel/" + Re;
+/***************************************** Edit records *****************************************/
+function exportReport() {
+    window.location.href = "<?php echo BASE_URL ?>apanel/dividend_report.php";
 }
 </script>

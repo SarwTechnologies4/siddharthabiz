@@ -258,4 +258,22 @@ function addInvestment(Re) {
 function addPayment(Re) {
     window.location.href = "<?php echo ADMIN_URL ?>payment/addNew/" + Re;
 }
+
+// toggle access
+function toggleAccess(Re) {
+    $.ajax({
+        type: "POST",
+        dataType: "JSON",
+        url: getLocation(),
+        data: 'action=toggleAccess&id=' + Re,
+        success: function(data) {
+            if(data.action == 'success') {
+                let item = JSON.parse(data.data);
+                let element = $('#accessToggleBtn');
+                $('#accessToggleBtn .button-content').text(item.access_granted ? 'Revoke Access' : 'Share Access');
+                element.toggleClass('bg-blue-alt bg-red');
+            }
+        }
+    });
+}
 </script>

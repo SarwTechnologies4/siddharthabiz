@@ -4,7 +4,7 @@ class Investment extends DatabaseObject
 {
 
     protected static $table_name = "tbl_investment";
-    protected static $db_fields = array('id', 'company_id', 'shareholder_id', 'alloted_quantity', 'price_per_share', 'investment_amount', 'percentage', 'added_date', 'deleted' , 'long_name', 'shareholders_number', 'shareholders_name');// , 'long_name', 'shareholders_number', 'shareholders_name'
+    protected static $db_fields = array('id', 'company_id', 'shareholder_id', 'alloted_quantity', 'price_per_share', 'investment_amount', 'percentage', 'added_date', 'deleted');
 
     public $id;
     public $company_id;
@@ -15,9 +15,6 @@ class Investment extends DatabaseObject
     public $percentage;
     public $added_date;
     public $deleted;
-    public $long_name;
-    public $shareholders_number;
-    public $shareholders_name;
 
     public static function agg_data()
     {
@@ -28,12 +25,8 @@ class Investment extends DatabaseObject
         $sql .= " WHERE inv.deleted = 0";
         $sql .= " GROUP BY inv.company_id";
         $sql .= " ORDER BY inv.`id` DESC";
-        $result = $db->query($sql);
-        $object_array = [];
-        while ($row = $db->fetch_array($result)) {
-            $object_array[] = self::instantiate($row);
-        }
-        return $object_array;
+        $result = self::objectify_sql($sql);
+        return $result;
 
     }
 
@@ -46,12 +39,8 @@ class Investment extends DatabaseObject
         $sql .= " WHERE inv.deleted = 0";
         $sql .= " AND inv.shareholder_id = " . $shareholder_id;
         $sql .= " ORDER BY inv.`id` DESC";
-        $result = $db->query($sql);
-        $object_array = [];
-        while ($row = $db->fetch_array($result)) {
-            $object_array[] = self::instantiate($row);
-        }
-        return $object_array;
+        $result = self::objectify_sql($sql);
+        return $result;
 
     }
 
@@ -65,8 +54,45 @@ class Investment extends DatabaseObject
         $sql .= " WHERE inv.deleted = 0";
         $sql .= " AND inv.company_id = " . $company_id;
         $sql .= " ORDER BY inv.`id` DESC";
-        $result_array = self::find_by_sql($sql);
-        return $result_array;
+        $result = self::objectify_sql($sql);
+        return $result;
+    }
+
+    public static function objectify_sql($sql){
+        global $db;
+        $result = $db->query($sql);
+        $object_array = [];
+        while ($row = $db->fetch_array($result)) {
+            $object_array[] = (object) $row;
+        }
+        return $object_array;
+    }
+
+    public static function list_report()
+    {
+        global $db;
+        $sql = "SELECT shareholder.name, shareholder.internal_id, hotel.long_name, inv.alloted_quantity, inv.investment_amount, IF(payment.payment_amount, payment.`payment_amount`, 0) AS payment_amount";
+        $sql .= " FROM " . self::$table_name . " AS inv";
+        $sql .= " LEFT JOIN tbl_apihotel AS hotel ON hotel.id = inv.company_id";
+        $sql .= " LEFT JOIN tbl_shareholders AS shareholder ON shareholder.id = inv.shareholder_id";
+        $sql .= " LEFT JOIN tbl_payment AS payment ON payment.shareholder_id = inv.shareholder_id AND payment.company_id = inv.company_id";
+        $sql .= " WHERE inv.deleted = 0";
+        $sql .= " GROUP BY shareholder.id, inv.company_id";
+        $sql .= " ORDER BY inv.`id` DESC";
+        $result = self::objectify_sql($sql);
+        return $result;
+
+    }
+
+    public static function detail_by_id($id = 0)
+    {
+        global $db;
+        $sql = "SELECT inv.*, shareholder.name as shareholders_name";
+        $sql .= " FROM " . self::$table_name . " AS inv";
+        $sql .= " LEFT JOIN tbl_shareholders AS shareholder ON shareholder.id = inv.shareholder_id";
+        $sql .= " WHERE inv.id = {$id} LIMIT 1";
+        $result = self::objectify_sql($sql);
+        return !empty($result) ? array_shift($result) : false;
     }
 
     // Get investment list for filter

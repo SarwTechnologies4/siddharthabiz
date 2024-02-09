@@ -15,14 +15,27 @@ endif ?>
 </h3>
 <div class="example-box">
     <div class="example-code">
+        <a href="javascript:void(0);" onClick="toggleAccess(<?php echo $advInfo->id; ?>);" 
+            class="loadingbar-demo btn medium <?php echo $advInfo->access_granted ? 'bg-red' : 'bg-blue-alt'; ?>" id="accessToggleBtn">
+            <span class="glyph-icon icon-separator">
+                <i class="glyph-icon icon-share"></i>
+            </span>
+            <span class="button-content"> <?php echo $advInfo->access_granted ? 'Revoke Access' : 'Share Access'; ?> </span>
+        </a>
+
+        <hr>
         <h4>
             Transactions
         </h4>
+        <?php $dividend = Dividend::find_by_shareHolder($advInfo->id); ?>
+        <?php $investment = Investment::find_by_shareHolder($advInfo->id); ?>
+        <?php $payment = Payment::find_by_shareHolder($advInfo->id); ?>
+                                
         <div id="tabs">
             <ul>
-                <li><a href="#dividend-tab">Dividend</a></li>
-                <li><a href="#investment-tab">Investment</a></li>
-                <li><a href="#payment-tab">Payment</a></li>
+                <li><a href="#dividend-tab">Dividend (<?php echo count($dividend)?>)</a></li>
+                <li><a href="#investment-tab">Investment (<?php echo count($investment)?>)</a></li>
+                <li><a href="#payment-tab">Payment (<?php echo count($payment)?>)</a></li>
             </ul>
             <div id="dividend-tab" class="shareholder-tabs">
                 <h4>
@@ -49,8 +62,7 @@ endif ?>
                             </thead>
 
                             <tbody>
-                                <?php $records = Dividend::find_by_shareHolder($advInfo->id);
-                                foreach ($records as $key => $record): ?>
+                                <?php foreach ($dividend as $key => $record): ?>
                                 <tr id="<?php echo $record->id; ?>">
                                     <td style="display:none;"><?php echo $key + 1; ?></td>
                                     <td> <?php echo $record->long_name; ?> </td>
@@ -90,8 +102,7 @@ endif ?>
                             </thead>
 
                             <tbody>
-                                <?php $records = Investment::find_by_shareHolder($advInfo->id);
-                                foreach ($records as $key => $record): ?>
+                                <?php foreach ($investment as $key => $record): ?>
                                 <tr id="<?php echo $record->id; ?>">
                                     <td style="display:none;">
                                         <?php echo $key + 1; ?>
@@ -133,8 +144,7 @@ endif ?>
                             </thead>
 
                             <tbody>
-                                <?php $records = Payment::find_by_shareHolder($advInfo->id);
-                                foreach ($records as $key => $record): ?>
+                                <?php foreach ($payment as $key => $record): ?>
                                 <tr id="<?php echo $record->id; ?>">
                                     <td style="display:none;">
                                         <?php echo $key + 1; ?>

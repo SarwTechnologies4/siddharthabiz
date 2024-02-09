@@ -12,7 +12,7 @@ class Shareholder extends DatabaseObject
         'phone', 'mobile', 'email', 'terminated_date', 'terminated_amount',
         'citizenship_image', 'pan_image', 'license_image', 'pp_image',
         'company_name', 'company_address', 'company_pan', 'company_image',
-        'status', 'sortorder');
+        'status', 'sortorder', 'access_granted');
 
     public $id;    public $internal_id;    public $name;    public $gender;    public $citizenship;    public $citizenship_district;    public $citizenship_issue_date;
     public $father;    public $grand_father;    public $mother;    public $spouse;    public $nominee;    public $nominee_citizenship;    public $nominee_relationship;
@@ -21,7 +21,7 @@ class Shareholder extends DatabaseObject
     public $phone;    public $mobile;    public $email;    public $terminated_date;    public $terminated_amount;
     public $citizenship_image;    public $pan_image;    public $license_image;    public $pp_image;
     public $company_name;    public $company_address;    public $company_pan;    public $company_image;    public $meta_description;
-    public $status;    public $sortorder;
+    public $status;    public $sortorder;    public $access_granted;
 
     //Find all published rows in the current database table.
 

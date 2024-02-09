@@ -1,70 +1,33 @@
 <?php
 
-class Valuation extends DatabaseObject
+class Notification extends DatabaseObject
 {
 
-    protected static $table_name = "tbl_valuation";
-    protected static $db_fields = array('id', 'company_id', 'share_value', 'company_value', 'date', 'added_date', 'deleted');
+    protected static $table_name = "tbl_notification";
+    protected static $db_fields = array('id', '`type`', 'related_id', '`action`', '`change`', 'date', '`read`');
 
     public $id;
-    public $company_id;
-    public $share_value;
-    public $company_value;
+    public $type;
+    public $related_id;
+    public $action;
+    public $change;
     public $date;
-    public $added_date;
-    public $deleted;
+    public $read;
+    
 
-    public static function agg_data()
+    // Get notification list for filter
+    public static function get_notification()
     {
         global $db;
-        $sql = "SELECT inv.*, hotel.long_name";
-        $sql .= " FROM " . self::$table_name . " AS inv";
-        $sql .= " LEFT JOIN tbl_apihotel AS hotel ON hotel.id = inv.company_id";
-        $sql .= " WHERE inv.deleted = 0";
-        $sql .= " GROUP BY inv.company_id";
-        $sql .= " ORDER BY inv.`id` DESC";
-        $result = self::objectify_sql($sql);
-        return $result;
-
-    }
-
-    // Valuation display
-    public static function getValuationByCompany($company_id)
-    {
-        global $db;
-        $sql = "SELECT inv.*";
-        $sql .= " FROM " . self::$table_name . " AS inv";
-        $sql .= " WHERE inv.deleted = 0";
-        $sql .= " AND inv.company_id = " . $company_id;
-        $sql .= " ORDER BY inv.`id` DESC";
-        $result = self::objectify_sql($sql);
-        return $result;
-    }
-
-    public static function objectify_sql($sql)
-    {
-        global $db;
-        $result = $db->query($sql);
-        $object_array = [];
-        while ($row = $db->fetch_array($result)) {
-            $object_array[] = (object) $row;
-        }
-        return $object_array;
-    }
-
-    // Get valuation list for filter
-    public static function get_valuation()
-    {
-        global $db;
-        $sql = "SELECT id FROM " . self::$table_name . " WHERE deleted=0 ORDER BY `id` ASC ";
+        $sql = "SELECT id FROM " . self::$table_name . " ORDER BY `id` ASC ";
         return self::find_by_sql($sql);
     }
 
-    // Valuation display
-    public static function getValuation($page = "")
+    // Notification display
+    public static function getNotification($page = "")
     {
         global $db;
-        $result_array = self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE name='{$page}' AND deleted=0 LIMIT 1");
+        $result_array = self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE name='{$page}' LIMIT 1");
         return !empty($result_array) ? array_shift($result_array) : false;
     }
 
@@ -72,7 +35,7 @@ class Valuation extends DatabaseObject
     public static function find_all()
     {
         global $db;
-        return self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE deleted=0 ORDER BY `id` ASC");
+        return self::find_by_sql("SELECT * FROM " . self::$table_name . " ORDER BY `id` ASC");
     }
 
     //Get sortorder by id
@@ -89,9 +52,9 @@ class Valuation extends DatabaseObject
     public static function find_by_id($id = 0)
     {
         global $db;
-        $sql = "SELECT inv.*";
-        $sql .= " FROM " . self::$table_name . " AS inv";
-        $sql .= " WHERE inv.id = {$id} LIMIT 1";
+        $sql = "SELECT *";
+        $sql .= " FROM " . self::$table_name . "";
+        $sql .= " WHERE id = {$id} LIMIT 1";
         $result_array = self::find_by_sql($sql);
         return !empty($result_array) ? array_shift($result_array) : false;
     }
