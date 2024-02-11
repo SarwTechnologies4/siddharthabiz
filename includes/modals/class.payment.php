@@ -47,7 +47,7 @@ class Payment extends DatabaseObject
     public static function getPaymentByCompany($company_id)
     {
         global $db;
-        $sql = "SELECT inv.*, shareholder.name as shareholders_name";
+        $sql = "SELECT inv.*, shareholder.name as shareholders_name, shareholder.internal_id";
         $sql .= " FROM " . self::$table_name . " AS inv";
         $sql .= " LEFT JOIN tbl_shareholders AS shareholder ON shareholder.id = inv.shareholder_id";
         $sql .= " WHERE inv.deleted = 0";

@@ -45,6 +45,17 @@ class Shareholder extends DatabaseObject
         }
     }
 
+    public static function objectify_sql($sql)
+    {
+        global $db;
+        $result = $db->query($sql);
+        $object_array = [];
+        while ($row = $db->fetch_array($result)) {
+            $object_array[] = (object) $row;
+        }
+        return $object_array;
+    }
+
     //FIND THE HIGHEST MAX NUMBER.
     public static function find_maximum($field = "sortorder")
     {

@@ -267,13 +267,41 @@ function toggleAccess(Re) {
         url: getLocation(),
         data: 'action=toggleAccess&id=' + Re,
         success: function(data) {
-            if(data.action == 'success') {
+            if (data.action == 'success') {
                 let item = JSON.parse(data.data);
                 let element = $('#accessToggleBtn');
-                $('#accessToggleBtn .button-content').text(item.access_granted ? 'Revoke Access' : 'Share Access');
+                $('#accessToggleBtn .button-content').text(item.access_granted ? 'Revoke Access' :
+                    'Share Access');
                 element.toggleClass('bg-blue-alt bg-red');
             }
         }
     });
 }
+
+/***************************************** Edit records *****************************************/
+$(function() {
+    $('#export_investment,#export_dividend,#export_payment,#export_shareholder').on('click', function(e) {
+        e.preventDefault(); 
+        let ID = $(this).attr('id');
+        let form = $(this).parent().find('form')[0];
+        let fileName = '';
+        switch (ID) {
+            case 'export_investment':
+                fileName = 'investment_report';
+                break;
+            case 'export_dividend':
+                fileName = 'dividend_report';
+                break;                
+            case 'export_payment':
+                fileName = 'payment_report';
+                break;              
+            default:
+                fileName = 'export_shareholder';
+                break;
+        }
+        $(form).attr('action', "<?php echo BASE_URL ?>apanel/shareholder/" + fileName + ".php").submit();
+    });
+
+
+});
 </script>

@@ -8,6 +8,16 @@
         </span>
         <span class="button-content"> Back </span>
     </a>
+    <a class="loadingbar-demo btn medium bg-blue-alt float-right" style="margin-right: 10px;" href="#"
+        id="export_company_dividend">
+        <span class="glyph-icon icon-separator">
+            <i class="glyph-icon icon-download"></i>
+        </span>
+        <span class="button-content"> Download </span>
+    </a>
+    <form method="POST">
+        <input type="hidden" name="id" value="<?php echo $company->id; ?>">
+    </form>
 </h3>
 <div class="my-msg"></div>
 <div class="example-box">

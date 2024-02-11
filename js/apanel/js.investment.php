@@ -196,4 +196,13 @@ function viewReport() {
 function exportReport() {
     window.location.href = "<?php echo BASE_URL ?>apanel/investment_report.php";
 }
+
+$(function() {
+    $('#export_investment, #export_company_investment').on('click', function(e) {
+        e.preventDefault(); 
+        let ID = $(this).attr('id');
+        let form = $(this).parent().find('form')[0];
+        $(form).attr('action', "<?php echo BASE_URL ?>apanel/investment/" + ID + ".php").submit();
+    });
+});
 </script>

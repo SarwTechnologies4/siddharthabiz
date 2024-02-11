@@ -42,6 +42,14 @@ if (isset($_GET['page']) && $_GET['page'] == "shareholder" && isset($_GET['mode'
         </span>
         <span class="button-content"> Add New </span>
     </a>
+    <a class="loadingbar-demo btn medium bg-blue-alt float-right" style="margin-right: 10px;" href="#"
+        id="export_shareholder">
+        <span class="glyph-icon icon-separator">
+            <i class="glyph-icon icon-download"></i>
+        </span>
+        <span class="button-content"> Download </span>
+    </a>
+    <form method="POST"></form>
 </h3>
 <div class="my-msg"></div>
 <div class="example-box">
@@ -66,8 +74,8 @@ if (isset($_GET['page']) && $_GET['page'] == "shareholder" && isset($_GET['mode'
                     <td style="display:none;"><?php echo $key + 1; ?></td>
                     <td><input type="checkbox" class="bulkCheckbox" bulkId="<?php echo $record->id; ?>" /></td>
                     <td>
-                        <a href="javascript:void(0);" data-id="<?php echo $record->id; ?>" class="clicker loadingbar-demo"
-                            title="<?php echo $record->name; ?>">
+                        <a href="javascript:void(0);" data-id="<?php echo $record->id; ?>"
+                            class="clicker loadingbar-demo" title="<?php echo $record->name; ?>">
                             <?php echo $record->name; ?></a>
                     </td>
                     <td>
@@ -124,11 +132,11 @@ if (isset($_GET['page']) && $_GET['page'] == "shareholder" && isset($_GET['mode'
 
 <script type="text/javascript">
 $(function() {
-    $(".clicker").on('dblclick', function(){
+    $(".clicker").on('dblclick', function() {
         let $this = $(this);
         viewDetail($this.data('id'));
     });
-    $(".clicker").on('click', function(){
+    $(".clicker").on('click', function() {
         let $this = $(this);
         editRecord($this.data('id'));
     });

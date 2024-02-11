@@ -15,12 +15,14 @@ endif ?>
 </h3>
 <div class="example-box">
     <div class="example-code">
-        <a href="javascript:void(0);" onClick="toggleAccess(<?php echo $advInfo->id; ?>);" 
-            class="loadingbar-demo btn medium <?php echo $advInfo->access_granted ? 'bg-red' : 'bg-blue-alt'; ?>" id="accessToggleBtn">
+        <a href="javascript:void(0);" onClick="toggleAccess(<?php echo $advInfo->id; ?>);"
+            class="loadingbar-demo btn medium <?php echo $advInfo->access_granted ? 'bg-red' : 'bg-blue-alt'; ?>"
+            id="accessToggleBtn">
             <span class="glyph-icon icon-separator">
                 <i class="glyph-icon icon-share"></i>
             </span>
-            <span class="button-content"> <?php echo $advInfo->access_granted ? 'Revoke Access' : 'Share Access'; ?> </span>
+            <span class="button-content"> <?php echo $advInfo->access_granted ? 'Revoke Access' : 'Share Access'; ?>
+            </span>
         </a>
 
         <hr>
@@ -30,7 +32,7 @@ endif ?>
         <?php $dividend = Dividend::find_by_shareHolder($advInfo->id); ?>
         <?php $investment = Investment::find_by_shareHolder($advInfo->id); ?>
         <?php $payment = Payment::find_by_shareHolder($advInfo->id); ?>
-                                
+
         <div id="tabs">
             <ul>
                 <li><a href="#dividend-tab">Dividend (<?php echo count($dividend)?>)</a></li>
@@ -47,6 +49,17 @@ endif ?>
                         </span>
                         <span class="button-content"> Add Dividend </span>
                     </a>
+                    <a class="loadingbar-demo btn medium bg-blue-alt float-right"
+                        style="margin-right: 10px;" id="export_dividend">
+                        <span class="glyph-icon icon-separator">
+                            <i class="glyph-icon icon-download"></i>
+                        </span>
+                        <span class="button-content"> Download </span>
+                    </a>
+                    <form method="POST">
+                        <input type="hidden" name="shareholder_id" id="shareholder_id"
+                            value="<?php echo $advInfo->id; ?>">
+                    </form>
                 </h4>
                 <div class="example-box">
                     <div class="example-code">
@@ -87,6 +100,17 @@ endif ?>
                         </span>
                         <span class="button-content"> Add Investment </span>
                     </a>
+                    <a class="loadingbar-demo btn medium bg-blue-alt float-right"
+                        style="margin-right: 10px;" id="export_investment">
+                        <span class="glyph-icon icon-separator">
+                            <i class="glyph-icon icon-download"></i>
+                        </span>
+                        <span class="button-content"> Download </span>
+                    </a>
+                    <form method="POST">
+                        <input type="hidden" name="shareholder_id" id="shareholder_id"
+                            value="<?php echo $advInfo->id; ?>">
+                    </form>
                 </h4>
                 <div class="example-box">
                     <div class="example-code">
@@ -128,6 +152,17 @@ endif ?>
                         </span>
                         <span class="button-content"> Add Payment </span>
                     </a>
+                    <a class="loadingbar-demo btn medium bg-blue-alt float-right" href="javascript:void(0);"
+                        style="margin-right: 10px;" id="export_payment">
+                        <span class="glyph-icon icon-separator">
+                            <i class="glyph-icon icon-download"></i>
+                        </span>
+                        <span class="button-content"> Download </span>
+                    </a>
+                    <form method="POST">
+                        <input type="hidden" name="shareholder_id" id="shareholder_id"
+                            value="<?php echo $advInfo->id; ?>">
+                    </form>
                 </h4>
                 <div class="example-box">
                     <div class="example-code">

@@ -190,10 +190,19 @@ function viewRecord(Re) {
 /***************************************** Edit records *****************************************/
 function viewReport() {
     window.location.href = "<?php echo ADMIN_URL ?>dividend/viewReport";
-    }
+}
 
 /***************************************** Edit records *****************************************/
 function exportReport() {
     window.location.href = "<?php echo BASE_URL ?>apanel/dividend_report.php";
 }
+
+$(function() {
+    $('#export_dividend, #export_company_dividend').on('click', function(e) {
+        e.preventDefault(); 
+        let ID = $(this).attr('id');
+        let form = $(this).parent().find('form')[0];
+        $(form).attr('action', "<?php echo BASE_URL ?>apanel/dividend/" + ID + ".php").submit();
+        });
+    });
 </script>
